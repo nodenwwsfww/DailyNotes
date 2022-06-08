@@ -121,7 +121,7 @@ class Note(db.Model):
     return {
       'uuid': self.uuid,
       'data': self.text,
-      'title': self.name,
+      'title': self.title,
       'date': self.date,
       'is_date': self.is_date,
     }

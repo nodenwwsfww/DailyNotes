@@ -9,5 +9,5 @@ class Config(object):
   PREVENT_SIGNUPS = os.environ.get('PREVENT_SIGNUPS', False)
   SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'sqlite:///' + os.path.join(basedir + '/config', 'app.db')
   SQLALCHEMY_TRACK_MODIFICATIONS = False
-  JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(days=7)
+  JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(days=7)  
   EXPORT_FILE = os.path.join(basedir, 'config', 'export.zip')

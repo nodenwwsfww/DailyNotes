@@ -86,7 +86,7 @@ def save_day():
   db.session.flush()
   db.session.commit()
 
-  return jsonify(note=note.serialize), 200
+  return jsonify(note.serialize), 200
 
 
 @app.route('/api/create_note', methods=['POST'])
