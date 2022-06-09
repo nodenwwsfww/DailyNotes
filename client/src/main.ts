@@ -16,6 +16,7 @@ Vue.use(Buefy, {
 Vue.use(VueMeta);
 Vue.use(VueMasonry);
 
+Vue.use(i18n);
 new Vue({
   router,
   render: h => h(App)
