@@ -4,6 +4,7 @@ import { RootState } from '../types';
 import {actions} from "@/store/language/actions";
 import {getters} from "@/store/language/getters";
 import {mutations} from "@/store/language/mutations";
+import {defaultLocale} from "@/i18n";
 
 export const state: LanguageState = {
     language: defaultLocale
