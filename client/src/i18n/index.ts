@@ -1,12 +1,4 @@
-enum Locales {
-  EN = 'en',
-  FR = 'fr',
-}
-
-const LOCALES = [
-  { value: Locales.EN, caption: 'English' },
-  { value: Locales.FR, caption: 'Francais' },
-]
+import { Locales } from "./locales";
 
 import en from "./en.json";
 import fr from "./fr.json";
