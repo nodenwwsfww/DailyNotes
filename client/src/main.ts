@@ -5,7 +5,7 @@ import VueMeta from 'vue-meta';
 import VueMasonry from 'vue-masonry-css';
 
 import App from './App.vue';
-import store from './store';
+import store from './store/store';
 
 import router from './router';
 import {defaultLocale, messages} from "@/i18n";
