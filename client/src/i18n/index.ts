@@ -1,19 +1,28 @@
-export enum Locales {
+import { createI18n } from 'vue-i18n'
+
+enum Locales {
   EN = 'en',
   FR = 'fr',
 }
 
-export const LOCALES = [
+const LOCALES = [
   { value: Locales.EN, caption: 'English' },
-  { value: Locales.FR, caption: 'Français' },
+  { value: Locales.FR, caption: 'Francais' },
 ]
 
 import en from "./en.json";
 import fr from "./fr.json";
 
-export const messages = {
+const messages = {
   [Locales.EN]: en,
   [Locales.FR]: fr
 };
 
-export const defaultLocale = Locales.EN;
+const defaultLocale = Locales.EN;
+
+const i18n = createI18n<false>({
+  legacy: false,
+  locale: defaultLocale,
+  fallbackLocale: defaultLocale,
+  messages,
+})
