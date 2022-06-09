@@ -1,4 +1,4 @@
-import { createI18n } from 'vue-i18n'
+import VueI18n from "vue-i18n";
 
 enum Locales {
   EN = 'en',
@@ -20,11 +20,10 @@ const messages = {
 
 const defaultLocale = Locales.EN;
 
-const i18n = createI18n<false>({
-  legacy: false,
-  locale: defaultLocale,
-  fallbackLocale: defaultLocale,
+const i18n = new VueI18n({
   messages,
+  locale: defaultLocale,
+  fallbackLocale: defaultLocale
 });
 
 export default i18n;
