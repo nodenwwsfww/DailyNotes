@@ -1,5 +1,4 @@
 <template>
-  <ErrorPage/>
   <router-view></router-view>
 </template>
 
@@ -16,7 +15,6 @@ export default {
     titleTemplate: '%s | DailyNotes'
   },
   components: {
-    ErrorPage,
   },
   mounted: function() {
     SharedBuefy.notifications = this.$buefy.toast;
