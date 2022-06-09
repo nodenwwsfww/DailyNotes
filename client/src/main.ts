@@ -6,7 +6,6 @@ import VueMasonry from 'vue-masonry-css';
 
 import App from './App.vue';
 import router from './router';
-
 import i18n from '@/i18n';
 
 Vue.config.productionTip = false;
@@ -17,7 +16,7 @@ Vue.use(Buefy, {
 Vue.use(VueMeta);
 Vue.use(VueMasonry);
 
-//Vue.use(VueI18n);
+Vue.use(VueI18n);
 
 new Vue({
   router,
