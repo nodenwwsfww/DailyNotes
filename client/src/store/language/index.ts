@@ -6,7 +6,7 @@ import {getters} from "@/store/language/getters";
 import {mutations} from "@/store/language/mutations";
 
 export const state: LanguageState = {
-    language: 'en'
+    language: defaultLocale
 };
 const namespaced: boolean = true;
 
