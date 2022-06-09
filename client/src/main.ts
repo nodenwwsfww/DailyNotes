@@ -6,6 +6,8 @@ import VueMasonry from 'vue-masonry-css';
 
 import App from './App.vue';
 import router from './router';
+
+Vue.use(VueI18n);
 import i18n from '@/i18n';
 
 Vue.config.productionTip = false;
@@ -16,10 +18,9 @@ Vue.use(Buefy, {
 Vue.use(VueMeta);
 Vue.use(VueMasonry);
 
-Vue.use(VueI18n);
 
 new Vue({
-  router,
   i18n,
+  router,
   render: h => h(App)
 }).$mount('#app');
