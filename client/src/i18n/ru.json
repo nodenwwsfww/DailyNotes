@@ -1,0 +1,40 @@
+{
+  "titles": {
+    "main": "Bienvenue dans votre application Vue.js + TypeScript",
+    "plugins": "Librairies CLI install�es",
+    "links": "Liens essentiels",
+    "ecosystem": "Ecosyst�me"
+  },
+  "tooltip": {
+    "today": "Перейти в заметку дня"
+  },
+  "essentialLinks": {
+    "coreDocs": {
+      "caption": "Documentation de base",
+      "url": "https://vuejs.org"
+    },
+    "forum": {
+      "caption": "Forum",
+      "url": "https://forum.vuejs.org"
+    },
+    "communityChat": {
+      "caption": "Chat de la communaut�",
+      "url": "https://chat.vuejs.org"
+    },
+    "twitter": {
+      "caption": "Twitter",
+      "url": "https://twitter.com/vuejs"
+    },
+    "news": {
+      "caption": "Actualit�s",
+      "url": "https://news.vuejs.org"
+    }
+  },
+  "ecosystem": {
+    "vue-router": "router Vue",
+    "vuex": "Store Vue",
+    "vue-devtools": "Outils de d�veloppement Vue",
+    "vue-loader": "vue-loader",
+    "awesome-vue": "awesome-vue"
+  }
+}

@@ -1,11 +1,11 @@
 import { Locales } from "./locales";
 
 import en from "./en.json";
-import fr from "./fr.json";
+import ru from "./ru.json";
 
 export const messages = {
   [Locales.EN]: en,
-  [Locales.FR]: fr
+  [Locales.RU]: ru
 };
 
 export const defaultLocale = Locales.EN;
