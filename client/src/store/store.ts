@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { RootState } from './types'
-import language from "@/store/language";
+import {language} from "@/store/language";
 
 Vue.use(Vuex)
 
