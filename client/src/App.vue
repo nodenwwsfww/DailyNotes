@@ -1,15 +1,22 @@
 <template>
+  <ErrorPage/>
   <router-view></router-view>
 </template>
 
 <script>
 import {SharedBuefy} from './services/sharedBuefy';
+import Header from "@/components/Header";
+import NoteCard from "@/components/NoteCard";
+import ErrorPage from "@/views/ErrorPage";
 
 
 export default {
   name: 'App',
   metaInfo: {
     titleTemplate: '%s | DailyNotes'
+  },
+  components: {
+    ErrorPage,
   },
   mounted: function() {
     SharedBuefy.notifications = this.$buefy.toast;
