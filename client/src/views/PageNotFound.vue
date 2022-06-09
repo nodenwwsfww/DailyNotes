@@ -10,10 +10,14 @@
 </template>
 
 <script>
+import { LOCALES, Locales } from "@/i18n/locales";
+import { defaultLocale } from "@/i18n";
+
 export default {
   name: "page-not-found",
   metaInfo: {
     title: '404',
-  }
+  },
+  data: () => ({ LOCALES, defaultLocale }),
 };
 </script>
