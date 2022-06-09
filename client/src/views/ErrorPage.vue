@@ -31,7 +31,7 @@ export default {
   },
   data: () => ({ LOCALES, defaultLocale }),
   methods: {
-    updateLanguage(lang: Locales) {
+    updateLanguage(lang) {
       this.$store.commit("SET_LANGUAGE", lang);
     }
   }
