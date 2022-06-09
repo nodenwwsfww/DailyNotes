@@ -1,5 +1,3 @@
-import VueI18n from "vue-i18n";
-
 enum Locales {
   EN = 'en',
   FR = 'fr',
@@ -13,17 +11,9 @@ const LOCALES = [
 import en from "./en.json";
 import fr from "./fr.json";
 
-const messages = {
+export const messages = {
   [Locales.EN]: en,
   [Locales.FR]: fr
 };
 
-const defaultLocale = Locales.EN;
-
-const i18n = new VueI18n({
-  messages,
-  locale: defaultLocale,
-  fallbackLocale: defaultLocale
-});
-
-export default i18n;
+export const defaultLocale = Locales.EN;

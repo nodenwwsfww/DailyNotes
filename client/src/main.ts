@@ -6,9 +6,15 @@ import VueMasonry from 'vue-masonry-css';
 
 import App from './App.vue';
 import router from './router';
+import {defaultLocale, messages} from "@/i18n";
 
 Vue.use(VueI18n);
-import i18n from '@/i18n';
+
+const i18n = new VueI18n({
+  messages,
+  locale: defaultLocale,
+  fallbackLocale: defaultLocale
+});
 
 Vue.config.productionTip = false;
 
