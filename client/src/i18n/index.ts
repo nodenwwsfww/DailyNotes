@@ -25,4 +25,4 @@ const i18n = createI18n<false>({
   locale: defaultLocale,
   fallbackLocale: defaultLocale,
   messages,
-})
+});
