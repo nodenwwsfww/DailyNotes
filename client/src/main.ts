@@ -5,6 +5,8 @@ import VueMeta from 'vue-meta';
 import VueMasonry from 'vue-masonry-css';
 
 import App from './App.vue';
+import store from './store';
+
 import router from './router';
 import {defaultLocale, messages} from "@/i18n";
 
@@ -28,5 +30,6 @@ Vue.use(VueMasonry);
 new Vue({
   i18n,
   router,
+  store,
   render: h => h(App)
 }).$mount('#app');
