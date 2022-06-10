@@ -15,9 +15,18 @@
   "pages": {
     "notfound": "Страница не найдена. Пожалуйста вернитесь и повторите."
   },
-  "placeholders": {
-    "username": "Логин",
-    "password": "Пароль"
+  "errMsg": {
+    "login": "Произошла ошибка при входе в систему. Пожалуйста, попробуйте еще раз."
+  },
+  "form": {
+    "placeholders": {
+      "username": "Логин",
+      "password": "Пароль"
+    },
+    "errors": {
+      "username": "Логин должен быть заполнен",
+      "password": "Пароль должен быть заполнен"
+    }
   },
   "essentialLinks": {
     "coreDocs": {

@@ -3,10 +3,10 @@
     <div class="msgs">{{errMsg}}</div>
     <div class="inputs">
         <b-field :type="usernameErr ? 'is-danger' : ''" :message="usernameErr">
-          <b-input :placeholder="$t('placeholders.username')" size="is-medium" icon="user" v-model="username" @keyup.native.enter="login"></b-input>
+          <b-input :placeholder="$t('form.placeholders.username')" size="is-medium" icon="user" v-model="username" @keyup.native.enter="login"></b-input>
         </b-field>
-        <b-field :type="passwordErr ? 'is-danger' : ''" :message="passwordErr"> 
-          <b-input :placeholder="$t('placeholders.password')" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="login"></b-input>
+        <b-field :type="passwordErr ? 'is-danger' : ''" :message="passwordErr">
+          <b-input :placeholder="$t('form.placeholders.password')" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="login"></b-input>
         </b-field>
         <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="login" :loading="isLoading">{{ $t('auth.login') }}</b-button>
         <h1 class="mt-20 alt-button" @click="signup" v-if="!hideSignup">{{ $t('auth.signup') }}</h1>
@@ -60,12 +60,13 @@ export default class Login extends Vue {
     this.errMsg = '';
 
     if (!this.username || !this.username.length) {
-      this.usernameErr = 'Username must be filled';
+      this.usernameErr = $t('form.errors.username');
+
       return;
     }
 
     if (!this.password || !this.password.length) {
-      this.passwordErr = 'Password must be filled.';
+      this.passwordErr = $t('form.errors.password');
       return;
     }
 
@@ -87,7 +88,7 @@ export default class Login extends Vue {
     } catch (e) {
       console.log(e);
 
-      this.errMsg = 'There was an error logging in. Please try again.';
+      this.errMsg = $t('errMsg.login');
       this.$buefy.toast.open({
         duration: 5000,
         message: this.errMsg,

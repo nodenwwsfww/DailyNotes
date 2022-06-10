@@ -15,9 +15,18 @@
     "login": "Login",
     "signup": "Sign Up"
   },
-  "placeholders": {
-    "username": "Username",
-    "password": "Password"
+  "errMsg": {
+    "login": "There was an error logging in. Please try again."
+  },
+  "form": {
+    "placeholders": {
+      "username": "Username",
+      "password": "Password"
+    },
+    "errors": {
+      "username": "Username must be filled",
+      "password": "Password must be filled"
+    }
   },
   "essentialLinks": {
     "coreDocs": {
