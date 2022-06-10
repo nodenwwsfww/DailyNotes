@@ -8,8 +8,8 @@
       <b-field :type="passwordErr ? 'is-danger' : ''" :message="passwordErr">
         <b-input placeholder="Password" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="login"></b-input>
       </b-field>
-      <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="login" :loading="isLoading">Login</b-button>
-      <h1 class="mt-20 alt-button" @click="signup" v-if="!hideSignup">Sign Up</h1>
+      <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="login" :loading="isLoading">{{ $t('auth.login') }}</b-button>
+      <h1 class="mt-20 alt-button" @click="signup" v-if="!hideSignup">{{ $t('auth.signup') }}</h1>
     </div>
   </div>
 </template>

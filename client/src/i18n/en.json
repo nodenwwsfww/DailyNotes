@@ -11,6 +11,10 @@
   "pages": {
     "not-found": "Page Not Found. Please go back and try again."
   },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up"
+  },
   "essentialLinks": {
     "coreDocs": {
       "caption": "Core Docs",
