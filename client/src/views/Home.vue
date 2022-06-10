@@ -6,7 +6,7 @@
     >
       <div class="columns light-white center-columns text-center">
         <div class="column">
-          <b-tooltip label={{$t('tooltip.today')}} position="is-bottom">
+          <b-tooltip label=`$t('tooltip.today')` position="is-bottom">
             <div @click="today()">
               <b-icon
                 icon="book-open"
