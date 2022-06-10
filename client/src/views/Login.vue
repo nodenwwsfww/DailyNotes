@@ -2,7 +2,7 @@
   <div>
     <div class="msgs">{{errMsg}}</div>
     <div class="inputs">
-      <i18n>
+      <i18n path="placeholders">
         <b-field :type="usernameErr ? 'is-danger' : ''" :message="usernameErr">
           <b-input placeholder="$t('placeholders.Username')" size="is-medium" icon="user" v-model="username" @keyup.native.enter="login"></b-input>
         </b-field>
