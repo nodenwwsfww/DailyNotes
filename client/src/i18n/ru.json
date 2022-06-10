@@ -16,8 +16,8 @@
     "notfound": "Страница не найдена. Пожалуйста вернитесь и повторите."
   },
   "placeholders": {
-    "Username": "Логин",
-    "Password": "Пароль"
+    "username": "Логин",
+    "password": "Пароль"
   },
   "essentialLinks": {
     "coreDocs": {

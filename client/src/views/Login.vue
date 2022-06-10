@@ -2,18 +2,18 @@
   <div>
     <div class="msgs">{{errMsg}}</div>
     <div class="inputs">
-      <i18n path="placeholders.Username">
         <b-field :type="usernameErr ? 'is-danger' : ''" :message="usernameErr">
-          <b-input placeholder="$t('placeholders.Username')" size="is-medium" icon="user" v-model="username" @keyup.native.enter="login"></b-input>
+          <i18n path="placeholders.Username">
+            <b-input placeholder="$t('placeholders.username')" size="is-medium" icon="user" v-model="username" @keyup.native.enter="login"></b-input>
+          </i18n>
         </b-field>
-      </i18n>
-      <i18n path="placeholders.Password">
         <b-field :type="passwordErr ? 'is-danger' : ''" :message="passwordErr">
-          <b-input placeholder="$t('placeholders.Password')" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="login"></b-input>
+          <i18n path="placeholders.password">
+            <b-input placeholder="$t('placeholders.Password')" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="login"></b-input>
+          </i18n>
         </b-field>
         <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="login" :loading="isLoading">{{ $t('auth.login') }}</b-button>
         <h1 class="mt-20 alt-button" @click="signup" v-if="!hideSignup">{{ $t('auth.signup') }}</h1>
-      </i18n>
     </div>
     <LanguageSelector/>
   </div>
