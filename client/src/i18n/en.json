@@ -8,6 +8,9 @@
   "tooltip": {
     "today": "Go to Today"
   },
+  "pages": {
+    "not-found": "Page Not Found. Please go back and try again."
+  },
   "essentialLinks": {
     "coreDocs": {
       "caption": "Core Docs",

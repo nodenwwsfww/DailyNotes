@@ -8,6 +8,9 @@
   "tooltip": {
     "today": "Перейти в заметку дня"
   },
+  "pages": {
+    "notfound": "Страница не найдена. Пожалуйста вернитесь и повторите."
+  },
   "essentialLinks": {
     "coreDocs": {
       "caption": "Documentation de base",
