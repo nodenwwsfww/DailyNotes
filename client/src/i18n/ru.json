@@ -15,6 +15,10 @@
   "pages": {
     "notfound": "Страница не найдена. Пожалуйста вернитесь и повторите."
   },
+  "placeholders": {
+    "Username": "Логин",
+    "Password": "Пароль"
+  },
   "essentialLinks": {
     "coreDocs": {
       "caption": "Documentation de base",

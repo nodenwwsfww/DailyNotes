@@ -15,6 +15,10 @@
     "login": "Login",
     "signup": "Sign Up"
   },
+  "placeholders": {
+    "Username": "Username",
+    "Password": "Password"
+  },
   "essentialLinks": {
     "coreDocs": {
       "caption": "Core Docs",
