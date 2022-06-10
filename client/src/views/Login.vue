@@ -11,6 +11,7 @@
       <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="login" :loading="isLoading">{{ $t('auth.login') }}</b-button>
       <h1 class="mt-20 alt-button" @click="signup" v-if="!hideSignup">{{ $t('auth.signup') }}</h1>
     </div>
+    <LanguageSelector/>
   </div>
 </template>
 
@@ -24,6 +25,9 @@ import {setToken} from '../services/user';
 declare var process: any;
 
 @Component({
+  components: {
+    LanguageSelector,
+  },
   metaInfo: {
     title: 'Login'
   }

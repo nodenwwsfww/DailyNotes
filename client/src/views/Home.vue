@@ -27,18 +27,7 @@
     <div class="column no-padding main-area" @click="focusEditor">
       <router-view :key="$route.path"></router-view>
     </div>
-    <select
-        v-model="$i18n.locale"
-        @change="updateLanguage($event.target.value)"
-    >
-      <option
-          v-for="(o, i) in LOCALES"
-          :key="i"
-          :value="o.value"
-          :selected="o.value === defaultLocale"
-      >{{ o.caption }}</option
-      >
-    </select>
+    <LanguageSelector/>
   </div>
 </template>
 
@@ -60,20 +49,16 @@ const HOUR = MINUTES * SECONDS * 1000; // MS in an hour
 
 import { LOCALES, Locales } from "@/i18n/locales";
 import { defaultLocale } from "@/i18n";
+import LanguageSelector from "@/components/LanguageSelector.vue";
 @Component({
   components: {
+    LanguageSelector,
     Calendar,
     Tags,
   },
   metaInfo: {
     title: 'Home',
   },
-  data: () => ({ LOCALES, defaultLocale }),
-  methods: {
-    updateLanguage(lang) {
-      this.$store.commit("SET_LANGUAGE", lang);
-    }
-  }
 })
 export default class Admin extends Vue {
   public auth_timer: any = null;
