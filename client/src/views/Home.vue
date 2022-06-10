@@ -6,17 +6,19 @@
     >
       <div class="columns light-white center-columns text-center">
         <div class="column">
-          <b-tooltip label=`${$t('tooltip.today')}` position="is-bottom">
-            <div @click="today()">
-              <b-icon
-                icon="book-open"
-                size="is-medium"
-                style="margin-top: .8em"
-                class="alt-button"
-              >
-              </b-icon>
-            </div>
-          </b-tooltip>
+          <i18n>
+            <b-tooltip label="$t('tooltip.today')" position="is-bottom">
+              <div @click="today()">
+                <b-icon
+                  icon="book-open"
+                  size="is-medium"
+                  style="margin-top: .8em"
+                  class="alt-button"
+                >
+                </b-icon>
+              </div>
+            </b-tooltip>
+          </i18n>
         </div>
       </div>
       <Calendar />
