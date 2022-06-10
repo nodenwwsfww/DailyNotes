@@ -37,6 +37,8 @@ import Component from 'vue-class-component';
 
 import Calendar from "@/components/Calendar.vue";
 import Tags from "@/components/Tags.vue";
+import LanguageSelector from "@/components/LanguageSelector.vue";
+
 
 import {updateJWT} from '../services/user';
 
@@ -49,7 +51,6 @@ const HOUR = MINUTES * SECONDS * 1000; // MS in an hour
 
 import { LOCALES, Locales } from "@/i18n/locales";
 import { defaultLocale } from "@/i18n";
-import LanguageSelector from "../components/LanguageSelector";
 @Component({
   components: {
     LanguageSelector,
