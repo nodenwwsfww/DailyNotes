@@ -6,7 +6,7 @@
     >
       <div class="columns light-white center-columns text-center">
         <div class="column">
-          <i18n>
+          <i18n path="tooltip.today">
             <b-tooltip label="$t('tooltip.today')" position="is-bottom">
               <div @click="today()">
                 <b-icon
