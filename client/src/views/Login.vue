@@ -2,10 +2,12 @@
   <div>
     <div class="msgs">{{errMsg}}</div>
     <div class="inputs">
-      <i18n path="placeholders">
+      <i18n path="placeholders.Username">
         <b-field :type="usernameErr ? 'is-danger' : ''" :message="usernameErr">
           <b-input placeholder="$t('placeholders.Username')" size="is-medium" icon="user" v-model="username" @keyup.native.enter="login"></b-input>
         </b-field>
+      </i18n>
+      <i18n path="placeholders.Password">
         <b-field :type="passwordErr ? 'is-danger' : ''" :message="passwordErr">
           <b-input placeholder="$t('placeholders.Password')" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="login"></b-input>
         </b-field>
