@@ -49,7 +49,7 @@ const HOUR = MINUTES * SECONDS * 1000; // MS in an hour
 
 import { LOCALES, Locales } from "@/i18n/locales";
 import { defaultLocale } from "@/i18n";
-import LanguageSelector from "@/components/LanguageSelector";
+import LanguageSelector from "../components/LanguageSelector";
 @Component({
   components: {
     LanguageSelector,

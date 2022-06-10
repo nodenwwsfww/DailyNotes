@@ -21,7 +21,7 @@ import Component from 'vue-class-component';
 
 import {Requests} from '../services/requests';
 import {setToken} from '../services/user';
-import LanguageSelector from '@/components/LanguageSelector';
+import LanguageSelector from '../components/LanguageSelector';
 
 declare var process: any;
 
