@@ -31,7 +31,7 @@ declare var process: any;
   },
   metaInfo: {
     title: 'Login'
-  }
+  },
 })
 export default class Login extends Vue {
   public username: string = '';
@@ -60,7 +60,7 @@ export default class Login extends Vue {
     this.errMsg = '';
 
     if (!this.username || !this.username.length) {
-      this.usernameErr = $t('form.errors.username');
+      this.usernameErr = $i18n.locales;
 
       return;
     }
