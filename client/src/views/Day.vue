@@ -77,7 +77,7 @@ export default class Day extends Vue {
       this.$router.push({name: 'Home Redirect'});
       this.$buefy.toast.open({
         duration: 5000,
-        message: 'There was an error retrieving that date. Redirecting to today.',
+        message: this.$t('errors.save-day').toString(),
         position: 'is-top',
         type: 'is-danger'
       });
@@ -145,11 +145,11 @@ export default class Day extends Vue {
       this.headerOptions.showDelete = !!this.day.uuid;
     } catch (e) {
       SharedBuefy.openConfirmDialog({
-        message: 'Failed to fetch the selected date. Would you like to start fresh or try again?',
+        message: this.$t('errors.fetch-selected-date').toString(),
         onConfirm: () => this.getDayData(),
         onCancel: () => this.setDefaultText(),
-        confirmText: 'Try again',
-        cancelText: 'Start Fresh'
+        confirmText: this.$t('buttons.Try-again').toString(),
+        cancelText:  this.$t('buttons.Start-Fresh').toString(),
       });
     }
 
@@ -172,7 +172,7 @@ export default class Day extends Vue {
     } catch(e) {
       this.$buefy.toast.open({
         duration: 5000,
-        message: 'There was an error saving. Please try again.',
+        message: this.$t('errors.saving-error').toString(),
         position: 'is-top',
         type: 'is-danger'
       });
@@ -185,7 +185,7 @@ export default class Day extends Vue {
   public async deleteNote() {
     this.$buefy.dialog.confirm({
       title: 'Deleting Daily Note',
-      message: 'Are you sure you want to <b>delete</b> this daily note? This action cannot be undone!',
+      message: this.$t('sure-confirms.delete-daily-note').toString(),
       confirmText: 'Delete',
       focusOn: 'cancel',
       type: 'is-danger',
@@ -202,14 +202,14 @@ export default class Day extends Vue {
         } catch(e) {
           this.$buefy.toast.open({
             duration: 5000,
-            message: 'There was an error deleting note. Please try again.',
+            message: this.$t('errors.deleting-error').toString(),
             position: 'is-top',
             type: 'is-danger'
           });
         }
         this.$buefy.toast.open({
           duration: 2000,
-          message: 'Daily note deleted!'
+          message: this.$t('success.daily-note-deleted').toString()
         });
       }
     })

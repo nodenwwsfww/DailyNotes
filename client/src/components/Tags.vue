@@ -4,21 +4,27 @@
       <b-loading :is-full-page="false" :active="sidebar.sidebarLoading"></b-loading>
     </div>
     <div v-else>
-      <span class="fa-1x" v-if="sidebar.tags.length">Tags</span>
+      <span class="fa-1x" v-if="sidebar.tags.length">{{
+        $t("headers.tags")
+      }}</span>
       <b-taglist class="tag-margin alt-button">
         <div @click="goToSearch('tag', tag)" v-for="tag of sidebar.tags" v-bind:key="tag" class="tags-margin">
           <b-tag :ellipsis="true" type="is-info">{{tag}}</b-tag>
         </div>
       </b-taglist>
 
-      <span class="fa-1x" v-if="sidebar.projects.length">Projects</span>
+      <span class="fa-1x" v-if="sidebar.projects.length">{{
+        $t("headers.projects")
+      }}</span>
       <b-taglist class="tag-margin alt-button">
         <div @click="goToSearch('project', project)" v-for="project of sidebar.projects" v-bind:key="project" class="tags-margin">
           <b-tag :ellipsis="true" type="is-success">{{project}}</b-tag>
         </div>
       </b-taglist>
 
-      <span class="fa-1x" v-if="sidebar.notes.length">Notes</span>
+      <span class="fa-1x" v-if="sidebar.notes.length">{{
+        $t("headers.notes")
+      }}</span>
       <b-taglist class="tag-margin alt-button">
         <div @click="goToNote(note.uuid)" v-for="note of sidebar.notes" v-bind:key="note.uuid" class="tags-margin">
           <b-tag :ellipsis="true" type="is-danger">{{note.title}}</b-tag>

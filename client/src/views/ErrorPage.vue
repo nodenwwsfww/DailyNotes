@@ -3,7 +3,7 @@
     <div class="msg level-item has-text-centered">
       <div>
         <b-icon icon="dumpster-fire" size="is-large" class="huge center-icon" custom-class="huge-icon"></b-icon>
-        <h1 class="title text-center">There was an error. Please go back and try again.</h1>
+        <h1 class="title text-center">{{$t('errors.any-error')}}</h1>
       </div>
     </div>
   </div>

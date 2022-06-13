@@ -1,7 +1,12 @@
 <template>
   <div>
     <Header :options="headerOptions"></Header>
-    <Editor v-if="!isLoading" v-bind:value="text" v-on:valChanged="valChanged" v-on:saveShortcut="saveNote"></Editor>
+    <Editor
+      v-if="!isLoading"
+      v-bind:value="text"
+      v-on:valChanged="valChanged"
+      v-on:saveShortcut="saveNote"
+    ></Editor>
     <div v-else class="loading-wrapper">
       <b-loading :is-full-page="false" :active="isLoading"></b-loading>
     </div>
@@ -9,62 +14,57 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import Vue from "vue";
+import Component from "vue-class-component";
 import { Route } from "vue-router";
-import format from 'date-fns/format';
-import isValid from 'date-fns/isValid';
-import parse from 'date-fns/parse';
-import _ from 'lodash';
+import format from "date-fns/format";
+import isValid from "date-fns/isValid";
+import parse from "date-fns/parse";
+import _ from "lodash";
 
-import SidebarInst from '../services/sidebar';
-import {NoteService} from '../services/notes';
-import {SharedBuefy} from '../services/sharedBuefy';
+import SidebarInst from "../services/sidebar";
+import { NoteService } from "../services/notes";
+import { SharedBuefy } from "../services/sharedBuefy";
 
-import {INote} from '../interfaces';
+import { INote } from "../interfaces";
 
-import Editor from '@/components/Editor.vue';
-import Header from '@/components/Header.vue';
+import Editor from "@/components/Editor.vue";
+import Header from "@/components/Header.vue";
 
-import {IHeaderOptions} from '../interfaces';
+import { IHeaderOptions } from "../interfaces";
 
-
-Component.registerHooks([
-  'metaInfo',
-  'beforeRouteUpdate',
-  'beforeRouteLeave'
-]);
+Component.registerHooks(["metaInfo", "beforeRouteUpdate", "beforeRouteLeave"]);
 
 @Component({
   components: {
     Editor,
-    Header,
+    Header
   }
 })
 export default class Note extends Vue {
   public sidebar = SidebarInst;
-  public text: string = '';
-  public modifiedText : string = '';
-  public unsavedChanges : boolean = false;
-  public title: string = 'Note';
+  public text: string = "";
+  public modifiedText: string = "";
+  public unsavedChanges: boolean = false;
+  public title: string = "Note";
   public note!: INote;
   public isLoading: boolean = false;
   public headerOptions: IHeaderOptions = {
     showDelete: true,
-    title: '',
+    title: "",
     saveDisabled: true,
     saveFn: () => this.saveNote(),
-    deleteFn: () => this.deleteNote(),
-  }
+    deleteFn: () => this.deleteNote()
+  };
 
   public metaInfo(): any {
     return {
       title: this.title
     };
-  };
+  }
 
   created() {
-    window.addEventListener('beforeunload', this.unsavedAlert);
+    window.addEventListener("beforeunload", this.unsavedAlert);
   }
 
   async mounted() {
@@ -74,16 +74,16 @@ export default class Note extends Vue {
       this.note = await NoteService.getNote(this.$route.params.uuid);
       this.text = this.note.data;
 
-      this.headerOptions.title = this.note.title || '';
-      this.title = this.note.title || '';
+      this.headerOptions.title = this.note.title || "";
+      this.title = this.note.title || "";
     } catch (e) {
-      this.$router.push({name: 'Home Redirect'});
+      this.$router.push({ name: "Home Redirect" });
     }
 
     this.isLoading = false;
 
-    this.$root.$on('taskUpdated', (data: any) => {
-      const {note_id, task, completed} = data;
+    this.$root.$on("taskUpdated", (data: any) => {
+      const { note_id, task, completed } = data;
 
       if (note_id !== this.note.uuid) {
         return;
@@ -92,9 +92,9 @@ export default class Note extends Vue {
       let original = task;
 
       if (!completed) {
-        original = original.replace('- [ ]', '- [x]');
+        original = original.replace("- [ ]", "- [x]");
       } else {
-        original = original.replace('- [x]', '- [ ]');
+        original = original.replace("- [x]", "- [ ]");
       }
 
       this.text = this.text.replace(original, task);
@@ -119,27 +119,27 @@ export default class Note extends Vue {
   }
 
   beforeDestroy() {
-    window.removeEventListener('beforeunload', this.unsavedAlert);
+    window.removeEventListener("beforeunload", this.unsavedAlert);
   }
 
   public async saveNote() {
-    const updatedNote = Object.assign(this.note, {data: this.modifiedText});
+    const updatedNote = Object.assign(this.note, { data: this.modifiedText });
     try {
       this.note = await NoteService.saveNote(updatedNote);
       if (!this.sidebar.autoSave) {
         this.text = this.modifiedText;
       }
-      this.headerOptions.title = this.note.title || '';
+      this.headerOptions.title = this.note.title || "";
 
       // Update the indicators
       this.valChanged(this.text);
       this.sidebar.getSidebarInfo();
-    } catch(e) {
+    } catch (e) {
       this.$buefy.toast.open({
         duration: 5000,
-        message: 'There was an error saving. Please try again.',
-        position: 'is-top',
-        type: 'is-danger'
+        message: this.$t("errors.saving-error").toString(),
+        position: "is-top",
+        type: "is-danger"
       });
     }
     this.unsavedChanges = false;
@@ -147,11 +147,11 @@ export default class Note extends Vue {
 
   public async deleteNote() {
     this.$buefy.dialog.confirm({
-      title: 'Deleting Note',
-      message: 'Are you sure you want to <b>delete</b> this note? This action cannot be undone!',
-      confirmText: 'Delete',
+      title: this.$t("titles.deleting-note").toString(),
+      message: this.$t("sure-confirms.delete-confirmation").toString(),
+      confirmText: this.$t("buttons.Delete").toString(),
       focusOn: 'cancel',
-      type: 'is-danger',
+      type: "is-danger",
       hasIcon: true,
       onConfirm: async () => {
         if (!this.note.uuid) {
@@ -160,21 +160,21 @@ export default class Note extends Vue {
         try {
           await NoteService.deleteNote(this.note.uuid);
           this.sidebar.getSidebarInfo();
-          this.$router.push({name: 'Home Redirect'});
-        } catch(e) {
+          this.$router.push({ name: "Home Redirect" });
+        } catch (e) {
           this.$buefy.toast.open({
             duration: 5000,
-            message: 'There was an error deleting note. Please try again.',
-            position: 'is-top',
-            type: 'is-danger'
+            message: this.$t('errors.deleting-error').toString(),
+            position: "is-top",
+            type: "is-danger"
           });
         }
         this.$buefy.toast.open({
           duration: 2000,
-          message: 'Note deleted!'
+          message: this.$t('success.note-deleted').toString(),
         });
       }
-    })
+    });
   }
 
   public valChanged(data: string) {
@@ -189,7 +189,7 @@ export default class Note extends Vue {
         this.autoSaveThrottle();
       }
     } else {
-      this.title = this.note.title || '';
+      this.title = this.note.title || "";
       this.headerOptions.saveDisabled = true;
     }
   }
@@ -208,9 +208,9 @@ export default class Note extends Vue {
 
   async unsavedDialog(next: Function) {
     this.$buefy.dialog.confirm({
-      title: "Unsaved Content",
-      message: "Are you sure you want to discard the unsaved content?",
-      confirmText: "Discard",
+      title: this.$t('titles.unsaved-content').toString(),
+      message: this.$t('sure-confirms.discard-unsaved').toString(),
+      confirmText: this.$t('buttons.Discard').toString(),
       type: "is-warning",
       hasIcon: true,
       onConfirm: () => next(),

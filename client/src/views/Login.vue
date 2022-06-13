@@ -8,8 +8,8 @@
         <b-field :type="passwordErr ? 'is-danger' : ''" :message="passwordErr">
           <b-input :placeholder="$t('form.placeholders.password')" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="login"></b-input>
         </b-field>
-        <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="login" :loading="isLoading">{{ $t('auth.login') }}</b-button>
-        <h1 class="mt-20 alt-button" @click="signup" v-if="!hideSignup">{{ $t('auth.signup') }}</h1>
+        <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="login" :loading="isLoading">{{ $t('headers.login') }}</b-button>
+        <h1 class="mt-20 alt-button" @click="signup" v-if="!hideSignup">{{ $t('headers.signup') }}</h1>
     </div>
     <LanguageSelector/>
   </div>
@@ -33,6 +33,7 @@ declare var process: any;
     title: 'Login'
   },
 })
+
 export default class Login extends Vue {
   public username: string = '';
   public usernameErr: string = '';
@@ -60,13 +61,13 @@ export default class Login extends Vue {
     this.errMsg = '';
 
     if (!this.username || !this.username.length) {
-      this.usernameErr = $i18n.locales;
+      this.usernameErr = this.$t('form.errors.username').toString();
 
       return;
     }
 
     if (!this.password || !this.password.length) {
-      this.passwordErr = $t('form.errors.password');
+      this.passwordErr = this.$t('form.errors.password').toString();
       return;
     }
 
@@ -88,7 +89,7 @@ export default class Login extends Vue {
     } catch (e) {
       console.log(e);
 
-      this.errMsg = $t('errMsg.login');
+      this.errMsg = this.$t('errors.login').toString();
       this.$buefy.toast.open({
         duration: 5000,
         message: this.errMsg,

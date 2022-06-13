@@ -1,60 +1,75 @@
 {
   "titles": {
-    "main": "Bienvenue dans votre application Vue.js + TypeScript",
-    "plugins": "Librairies CLI install�es",
-    "links": "Liens essentiels",
-    "ecosystem": "Ecosyst�me"
+    "deleting-note": "Удаление заметки",
+    "unsaved-content": "Несохраненный контент",
+    "create-note": "Создать новую заметки"
   },
   "tooltip": {
-    "today": "Перейти в заметку дня"
+    "today": "Вид на сегодня"
   },
-  "auth": {
-    "login": "Войти",
-    "signup": "Зарегистрироваться"
+  "headers": {
+    "login": "Авторизоваться",
+    "signup": "Зарегистрироваться",
+    "tags": "Теги",
+    "notes": "Заметки",
+    "projects": "Проекты"
   },
-  "pages": {
-    "notfound": "Страница не найдена. Пожалуйста вернитесь и повторите."
+  "buttons": {
+    "Delete": "Удалить",
+    "Discard": "Отказаться",
+    "Cancel": "Отмена",
+    "Search": "Поиск",
+    "Save-Continue": "Сохранить & продолжить",
+    "Try-again": "Попробовать ещё раз",
+    "Start-Fresh": "Обновить",
+    "Tasks": "Задачи",
+    "Search-notes": "Поиск заметок",
+    "Save": "Сохранять",
+    "Export-Notes": "Экспортировать заметки",
+    "Logout": "Выйти"
   },
-  "errMsg": {
-    "login": "Произошла ошибка при входе в систему. Пожалуйста, попробуйте еще раз."
+  "errors": {
+    "notfound": "Страница не найдена. Пожалуйста вернитесь и попробуйте снова.",
+    "saving-error": "Допущена ошибка сохранения. Пожалуйста, попробуйте еще раз.",
+    "deleting-error": "Допущена ошибка при удалении заметки. Пожалуйста, попробуйте еще раз.",
+    "login": "Допущена ошибка. Повторите попытку.",
+    "creating-account-error": "Произошла ошибка при создании вашей учетной записи. Пожалуйста, попробуйте еще раз.",
+    "unauthorized": "У вас нет доступа для просмотра этой страницы. Пожалуйста, вернитесь.",
+    "any-error": "Это была ошибка. Пожалуйста вернитесь и попробуйте снова.",
+    "save-day": "Была ошибка, получая эту дату. Перенаправление на сегодня.",
+    "fetch-selected-date": "Не удалось получить выбранную дату. Хотели бы вы обновить или попробовать еще раз?"
+  },
+  "notifications": {
+    "no-match-notes": "Нет заметок, которые соответствуют этому запросу."
+  },
+  "suggestions": {
+    "unsaved-changes": "У вас есть несохраненные изменения. Не хотите ли сохранить?"
+  },
+  "success": {
+    "note-deleted": "Примечание удалено!",
+    "daily-note-deleted": "Ежедневная заметка удалена!"
   },
   "form": {
     "placeholders": {
-      "username": "Логин",
-      "password": "Пароль"
+      "username": "Имя пользователя",
+      "password": "Пароль",
+      "confirm-password": "Подтвердить Пароль",
+      "search-query": "Поисковый запрос"
     },
     "errors": {
-      "username": "Логин должен быть заполнен",
-      "password": "Пароль должен быть заполнен"
+      "username": "Имя пользователя должно быть заполнено",
+      "password": "Пароль должен быть заполнен",
+      "confirm-password": "Пароли должны совпадать."
     }
   },
-  "essentialLinks": {
-    "coreDocs": {
-      "caption": "Documentation de base",
-      "url": "https://vuejs.org"
-    },
-    "forum": {
-      "caption": "Forum",
-      "url": "https://forum.vuejs.org"
-    },
-    "communityChat": {
-      "caption": "Chat de la communaut�",
-      "url": "https://chat.vuejs.org"
-    },
-    "twitter": {
-      "caption": "Twitter",
-      "url": "https://twitter.com/vuejs"
-    },
-    "news": {
-      "caption": "Actualit�s",
-      "url": "https://news.vuejs.org"
-    }
+  "search": {
+    "Project": "Проект",
+    "Tag": "Тэг",
+    "Text": "Текст"
   },
-  "ecosystem": {
-    "vue-router": "router Vue",
-    "vuex": "Store Vue",
-    "vue-devtools": "Outils de d�veloppement Vue",
-    "vue-loader": "vue-loader",
-    "awesome-vue": "awesome-vue"
+  "sure-confirms": {
+    "delete-confirmation": "Вы уверены, что хотите <b> удалить </b> эту заметку? Это действие не может быть отменено!",
+    "discard-unsaved": "Вы уверены, что хотите отказаться от несохраненного контента?",
+    "delete-daily-note": "Вы уверены, что хотите <b> удалить </b> эту ежедневную заметку? Это действие не может быть отменено!"
   }
 }

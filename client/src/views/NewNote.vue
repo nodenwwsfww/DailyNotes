@@ -80,7 +80,7 @@ export default class NewNote extends Vue {
     } catch(e) {
       this.$buefy.toast.open({
         duration: 5000,
-        message: 'There was an error saving. Please try again.',
+        message: this.$t('errors.saving-error').toString(),
         position: 'is-top',
         type: 'is-danger'
       });

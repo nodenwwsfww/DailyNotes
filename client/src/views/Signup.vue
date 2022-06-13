@@ -3,17 +3,18 @@
     <div class="msgs">{{errMsg}}</div>
     <div class="inputs">
       <b-field :type="usernameErr ? 'is-danger' : ''" :message="usernameErr">
-        <b-input placeholder="Username" size="is-medium" icon="user" v-model="username" @keyup.native.enter="signup"></b-input>
+        <b-input :placeholder="$t('form.placeholders.username')" size="is-medium" icon="user" v-model="username" @keyup.native.enter="signup"></b-input>
       </b-field>
       <b-field :type="passwordErr ? 'is-danger' : ''" :message="passwordErr">
-        <b-input placeholder="Password" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="signup"></b-input>
+        <b-input :placeholder="$t('form.placeholders.password')" type="password" password-reveal size="is-medium" icon="key" v-model="password" @keyup.native.enter="signup"></b-input>
       </b-field>
       <b-field :type="passConfirmErr ? 'is-danger' : ''" :message="passConfirmErr">
-        <b-input placeholder="Confirm Password" type="password" password-reveal size="is-medium" icon="key" v-model="passwordConfirm" @keyup.native.enter="signup"></b-input>
+        <b-input :placeholder="$t('form.placeholders.confirm-password')" type="password" password-reveal size="is-medium" icon="key" v-model="passwordConfirm" @keyup.native.enter="signup"></b-input>
       </b-field>
-      <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="signup" :loading="isLoading">Sign Up</b-button>
-      <h1 class="mt-20 alt-button" @click="login">Login</h1>
+      <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="signup" :loading="isLoading">{{ $t('headers.signup') }}</b-button>
+      <h1 class="mt-20 alt-button" @click="login">{{ $t('headers.login') }}</h1>
     </div>
+    <LanguageSelector/>
   </div>
 </template>
 
@@ -23,10 +24,14 @@ import Component from 'vue-class-component';
 
 import {Requests} from '../services/requests';
 import {setToken} from '../services/user';
+import LanguageSelector from "@/components/LanguageSelector.vue";
 
 declare var process: any;
 
 @Component({
+  components: {
+    LanguageSelector,
+  },
   metaInfo: {
     title: 'Sign Up'
   }
@@ -68,17 +73,17 @@ export default class Signup extends Vue {
     this.errMsg = '';
 
     if (!this.username || !this.username.length) {
-      this.usernameErr = 'Username must be filled';
+      this.usernameErr = this.$t('form.errors.username').toString();
       return;
     }
 
     if (!this.password || !this.password.length) {
-      this.passwordErr = 'Password must be filled.';
+      this.passwordErr = this.$t('form.errors.password').toString();
       return;
     }
 
     if (this.password !== this.passwordConfirm) {
-      this.passConfirmErr = 'Passwords must match.';
+      this.passConfirmErr = this.$t('form.errors.confirm-password').toString();
       return;
     }
 
@@ -100,7 +105,7 @@ export default class Signup extends Vue {
     } catch (e) {
       console.log(e);
 
-      this.errMsg = 'There was an error creating your account. Please try again.';
+      this.errMsg = this.$t('errors.creating-account-error').toString();
       this.$buefy.toast.open({
         duration: 5000,
         message: this.errMsg,

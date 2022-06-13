@@ -3,7 +3,7 @@
     <div class="msg level-item has-text-centered">
       <div>
         <b-icon icon="exclamation" size="is-large" class="huge center-icon" custom-class="huge-icon"></b-icon>
-        <h1 class="title text-center">{{$t('pages.notfound')}}</h1>
+        <h1 class="title text-center">{{$t('errors.notfound')}}</h1>
       </div>
     </div>
   </div>

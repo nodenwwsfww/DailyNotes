@@ -4,7 +4,7 @@
       <div class="modal-background" @click="cancel('outside')" />
       <div class="modal-card animation-content">
         <header class="modal-card-head">
-          <p class="modal-card-title">Unsaved Content</p>
+          <p class="modal-card-title">{{$t("titles.unsaved-content")}}</p>
         </header>
 
         <section class="modal-card-body is-flex">
@@ -21,7 +21,7 @@
               <p>
                 <template>
                   <div>
-                    You have unsaved changes changes. What would you like to do?
+                    {{$t("suggestions.unsaved-changes")}}
                   </div>
                 </template>
               </p>
@@ -31,17 +31,17 @@
 
         <footer class="modal-card-foot">
           <b-button ref="cancelButton" @click="cancel('button')"
-            >Cancel</b-button
+            >{{$t("buttons.Cancel")}}</b-button
           >
           <b-button type="is-warning" ref="discardButton" @click="discard"
-            >Discard</b-button
+            >{{$t("buttons.Discard")}}</b-button
           >
           <b-button
             type="is-primary"
             ref="saveButton"
             class="is-focused"
             @click="save"
-            >Save &amp; Continue</b-button
+            >{{$t("buttons.Save-Continue")}}</b-button
           >
         </footer>
       </div>

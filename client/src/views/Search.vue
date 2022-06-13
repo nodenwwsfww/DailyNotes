@@ -4,13 +4,13 @@
     <div class="search-container">
       <b-field explanded>
         <b-select v-model="sidebar.selectedSearch">
-          <option value="project">Project</option>
-          <option value="tag">Tag</option>
-          <option value="search">Text</option>
+          <option value="project">{{$t('search.Project')}}</option>
+          <option value="tag">{{$t('search.Tag')}}</option>
+          <option value="search">{{$t('search.Text')}}</option>
         </b-select>
-        <b-input placeholder="Searcy query" v-model="sidebar.searchString" expanded @keyup.native.enter="sidebar.searchNotes"></b-input>
+        <b-input :placeholder="$t('form.placeholders.search-query')" v-model="sidebar.searchString" expanded @keyup.native.enter="sidebar.searchNotes"></b-input>
         <p class="control">
-          <button class="button is-success" type="button" @click="sidebar.searchNotes()">Search</button>
+          <button class="button is-success" type="button" @click="sidebar.searchNotes()">{{$t('buttons.Search')}}</button>
         </p>
       </b-field>
       <div v-if="!sidebar.searchLoading">
@@ -19,7 +19,7 @@
             type="is-dark"
             :closable="false"
           >
-            There are no notes that match that query.
+            {{ $t('notifications.no-match-notes') }}
           </b-notification>
         </div>
         <masonry

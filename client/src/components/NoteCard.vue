@@ -3,12 +3,12 @@
     <h1>{{ parsedTitle }}</h1>
 
     <br />
-    <span class="fa-1x" v-if="note.tags.length">Tags</span>
+    <span class="fa-1x" v-if="note.tags.length">{{$t("headers.tags")}}</span>
     <b-taglist class="tag-margin">
       <b-tag :ellipsis="true" v-for="tag of note.tags" v-bind:key="tag" type="is-info">{{tag}}</b-tag>
     </b-taglist>
 
-    <span class="fa-1x" v-if="note.projects.length">Projects</span>
+    <span class="fa-1x" v-if="note.projects.length">{{$t("headers.projects")}}</span>
     <b-taglist class="tag-margin">
       <b-tag :ellipsis="true" v-for="project of note.projects" v-bind:key="project" type="is-success">{{project}}</b-tag>
     </b-taglist>
