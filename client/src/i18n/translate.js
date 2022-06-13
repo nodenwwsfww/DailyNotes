@@ -87,7 +87,7 @@ const main = async () => {
     let es_lang = await translator.translateObject(
         en_lang,
         translator.languages.English,
-        translator.languages.Russian
+        translator.languages.Turkish
     );
 
     const json = JSON.stringify(es_lang);

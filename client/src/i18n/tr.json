@@ -1,75 +1,75 @@
 {
   "titles": {
-    "deleting-note": "Deleting Note",
-    "unsaved-content": "Unsaved Content",
-    "create-note": "Create new note"
+    "deleting-note": "Silinme notu",
+    "unsaved-content": "Kaydetilmemiş İçerik",
+    "create-note": "Yeni notoluştur"
   },
   "tooltip": {
-    "today": "Go to Today"
+    "today": "Bugüne git"
   },
   "headers": {
-    "login": "Login",
-    "signup": "Sign Up",
-    "tags": "Tags",
-    "notes": "Notes",
-    "projects": "Projects"
+    "login": "Giriş yapmak",
+    "signup": "Üye olmak",
+    "tags": "Etiketler",
+    "notes": "Notalar",
+    "projects": "Projeler"
   },
   "buttons": {
-    "Delete": "Delete",
-    "Discard": "Discard",
-    "Cancel": "Cancel",
-    "Search": "Search",
-    "Save-Continue": "Save & Continue",
-    "Try-again": "Try again",
-    "Start-Fresh": "Start Fresh",
-    "Tasks": "Tasks",
-    "Search-notes": "Search notes",
-    "Save": "Save",
-    "Export-Notes": "Export Notes",
-    "Logout": "Logout"
+    "Delete": "Silmek",
+    "Discard": "Atmak",
+    "Cancel": "İptal",
+    "Search": "Arama",
+    "Save-Continue": "Kaydet ilerle",
+    "Try-again": "Tekrar deneyin",
+    "Start-Fresh": "Taze Başla",
+    "Tasks": "Görevler",
+    "Search-notes": "Arama notları",
+    "Save": "Kaydetmek",
+    "Export-Notes": "İhracat Notları",
+    "Logout": "Çıkış Yap"
   },
   "errors": {
-    "notfound": "Page Not Found. Please go back and try again.",
-    "saving-error": "There was an error saving. Please try again.",
-    "deleting-error": "There was an error deleting note. Please try again.",
-    "login": "There was an error logging in. Please try again.",
-    "creating-account-error": "There was an error creating your account. Please try again.",
-    "unauthorized": "You are unauthorized to view this page. Please go back.",
-    "any-error": "There was an error. Please go back and try again.",
-    "save-day": "There was an error retrieving that date. Redirecting to today.",
-    "fetch-selected-date": "Failed to fetch the selected date. Would you like to start fresh or try again?"
+    "notfound": "Sayfa bulunamadı. Lütfen geridönün ve tekrar deneyin.",
+    "saving-error": "Bir hata tasarrufu vardı. Lütfen tekrar deneyin.",
+    "deleting-error": "Bir hata silme notu vardı. Lütfen tekrar deneyin.",
+    "login": "Bir hata girişi vardı. Lütfen tekrar deneyin.",
+    "creating-account-error": "Hesabınızın oluşturulmasında bir hata oldu. Lütfen tekrar deneyin.",
+    "unauthorized": "Bu sayfayı görüntülemeniz için yetkisiz. Lütfen geri dönün.",
+    "any-error": "Bir hata oluştu. Lütfen geri dönün ve tekrar deneyin.",
+    "save-day": "O tarih alınan bir hata vardı. Bugüne yönlendirme.",
+    "fetch-selected-date": "Seçilen tarihi getirilemedi. Yeni başlamak mı yoksa tekrar denemek ister misiniz?"
   },
   "notifications": {
-    "no-match-notes": "There are no notes that match that query."
+    "no-match-notes": "Bu sorguyu eşleştiren hiçbir not yoktur."
   },
   "suggestions": {
-    "unsaved-changes": "You have unsaved changes changes. What would you like to do?"
+    "unsaved-changes": "Kaydedilmemiş değişiklikler var. Ne yapmak istersin?"
   },
   "success": {
-    "note-deleted": "Note deleted!",
-    "daily-note-deleted": "Daily note deleted!"
+    "note-deleted": "Not silindi!",
+    "daily-note-deleted": "Günlük not silindi!"
   },
   "form": {
     "placeholders": {
-      "username": "Username",
-      "password": "Password",
-      "confirm-password": "Confirm password",
-      "search-query": "Search query"
+      "username": "Kullanıcı adı",
+      "password": "Şifre",
+      "confirm-password": "Şifreyi Onayla",
+      "search-query": "Arama sorgusu"
     },
     "errors": {
-      "username": "Username must be filled",
-      "password": "Password must be filled",
-      "confirm-password": "Passwords must match."
+      "username": "Kullanıcı adı doldurulmalı",
+      "password": "Şifre doldurulmalı",
+      "confirm-password": "Şifreler aynı olmalıdır."
     }
   },
   "search": {
-    "Project": "Project",
-    "Tag": "Tag",
-    "Text": "Text"
+    "Project": "Proje",
+    "Tag": "Etiket",
+    "Text": "Metin"
   },
   "sure-confirms": {
-    "delete-confirmation": "Are you sure you want to <b>delete</b> this note? This action cannot be undone!",
-    "discard-unsaved": "Are you sure you want to discard the unsaved content?",
-    "delete-daily-note": "Are you sure you want to <b>delete</b> this daily note? This action cannot be undone!"
+    "delete-confirmation": "Bu notu <b> silmek istediğinizden emin misiniz? Bu eylem geri alınamaz!",
+    "discard-unsaved": "Kaydedilmemiş içeriği atmak istediğinizden emin misiniz?",
+    "delete-daily-note": "Bu günlük notu <b> silmek istediğinizden emin misiniz? Bu eylem geri alınamaz!"
   }
 }
