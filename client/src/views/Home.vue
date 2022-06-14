@@ -6,6 +6,7 @@
     >
       <div class="columns light-white center-columns text-center">
         <div class="column">
+          <LanguageSelector/>
           <i18n path="tooltip.today">
             <b-tooltip label="$t('tooltip.today')" position="is-bottom">
               <div @click="today()">
@@ -27,7 +28,6 @@
     <div class="column no-padding main-area" @click="focusEditor">
       <router-view :key="$route.path"></router-view>
     </div>
-    <LanguageSelector/>
   </div>
 </template>
 

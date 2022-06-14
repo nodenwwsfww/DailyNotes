@@ -5,46 +5,12 @@ select {
     border-radius: 5px;
     box-sizing: border-box;
     color: #3E3D40;
-    display: block;
     font-family: SourceSansPro, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 600;
     height: 40px;
     min-width: 80px;
     padding: 0 20px 0 16px;
-    position: absolute;
     outline: none;
-}
-label {
-    position:relative
-}
-
-label:after {
-    content:'';
-    left: 54px;
-    top: 17px;
-    padding:0 0 2px;
-    position:absolute;
-    pointer-events:none;
-    width: 0;
-    height: 0;
-    border-left: 3.5px solid transparent;
-    border-right: 3.5px solid transparent;
-    border-top: 5px solid #007fd8;
-    z-index: 100;
-}
-
-label:before {
-    content:'';
-    left: 56px;
-//right: 8px;
-    top: 10px;
-    width: 20px;
-    height: 20px;
-    background: white;
-    position: absolute;
-    pointer-events: none;
-    display: block;
-    z-index: 1;
 }
 }
