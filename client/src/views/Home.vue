@@ -4,24 +4,22 @@
       class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
       v-show="!sidebar.hide"
     >
+      <LanguageSelector/>
       <div class="columns light-white center-columns text-center">
-        <div class="block">
-          <LanguageSelector/>
-          <div class="column">
-            <i18n path="tooltip.today">
-              <b-tooltip label="$t('tooltip.today')" position="is-bottom">
-                <div @click="today()">
-                  <b-icon
-                      icon="book-open"
-                      size="is-medium"
-                      style="margin-top: .8em"
-                      class="alt-button"
-                  >
-                  </b-icon>
-                </div>
-              </b-tooltip>
-            </i18n>
-          </div>
+        <div class="column">
+          <i18n path="tooltip.today">
+            <b-tooltip label="$t('tooltip.today')" position="is-bottom">
+              <div @click="today()">
+                <b-icon
+                    icon="book-open"
+                    size="is-medium"
+                    style="margin-top: .8em"
+                    class="alt-button"
+                >
+                </b-icon>
+              </div>
+            </b-tooltip>
+          </i18n>
         </div>
       </div>
       <Calendar />
