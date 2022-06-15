@@ -1,21 +1,19 @@
 <template>
-  <div class="language-selector__container">
-    <label>
-      <select
-        v-model="$i18n.locale"
-        @change="updateLanguage($event.target.value)"
-        class="js_language_selector"
+  <label>
+    <select
+      v-model="$i18n.locale"
+      @change="updateLanguage($event.target.value)"
+      class="js_language_selector"
+    >
+      <option
+        v-for="(o, i) in LOCALES"
+        :key="i"
+        :value="o.value"
+        :selected="o.value === defaultLocale"
+        >{{ o.caption }}</option
       >
-        <option
-          v-for="(o, i) in LOCALES"
-          :key="i"
-          :value="o.value"
-          :selected="o.value === defaultLocale"
-          >{{ o.caption }}</option
-        >
-      </select>
-    </label>
-  </div>
+    </select>
+  </label>
 </template>
 
 <script>
