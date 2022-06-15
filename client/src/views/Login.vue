@@ -11,7 +11,7 @@
         <b-button type="is-primary" size="is-medium" expanded class="mt-20" @click="login" :loading="isLoading">{{ $t('headers.login') }}</b-button>
         <h1 class="mt-20 alt-button" @click="signup" v-if="!hideSignup">{{ $t('headers.signup') }}</h1>
     </div>
-    <LanguageSelector/>
+    <LanguageSelector style="margin-bottom: 10px;"/>
   </div>
 </template>
 
