@@ -1,6 +1,6 @@
 <template>
   <div class="language-selector__container">
-    <label>
+<!--    <label>
       <select
         v-model="$i18n.locale"
         @change="updateLanguage($event.target.value)"
@@ -14,7 +14,21 @@
           >{{ o.caption }}</option
         >
       </select>
-    </label>
+    </label>-->
+    <b-field label="Locale">
+      <b-select
+          v-model="$i18n.locale"
+          @select="updateLanguage($event.target.value)"
+      >
+        <option
+            v-for="(o, i) in LOCALES"
+            :key="i"
+            :value="o.value"
+            :selected="o.value === defaultLocale"
+        >{{ o.caption }}</option
+        >
+      </b-select>
+    </b-field>
   </div>
 </template>
 
