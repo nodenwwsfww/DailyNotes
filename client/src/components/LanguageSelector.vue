@@ -1,19 +1,21 @@
 <template>
-  <label>
-    <select
-      v-model="$i18n.locale"
-      @change="updateLanguage($event.target.value)"
-      class="js_language_selector"
-    >
-      <option
-        v-for="(o, i) in LOCALES"
-        :key="i"
-        :value="o.value"
-        :selected="o.value === defaultLocale"
-        >{{ o.caption }}</option
+  <div class="language-selector__container">
+    <label>
+      <select
+          v-model="$i18n.locale"
+          @change="updateLanguage($event.target.value)"
+          class="js_language_selector"
       >
-    </select>
-  </label>
+        <option
+            v-for="(o, i) in LOCALES"
+            :key="i"
+            :value="o.value"
+            :selected="o.value === defaultLocale"
+        >{{ o.caption }}</option
+        >
+      </select>
+    </label>
+  </div>
 </template>
 
 <script>
@@ -30,4 +32,4 @@ export default {
   }
 };
 </script>
-<!--<style scoped src="./LanguageSelector.scss" lang="scss"></style>-->
+<style src="./LanguageSelector.scss" lang="scss"></style>
