@@ -103,4 +103,4 @@ export default class Login extends Vue {
 }
 </script>
 
-<style scoped src="./LanguageSelector.scss" lang="scss"></style>
+<style scoped src="@/components/LanguageSelector.scss" lang="scss"></style>
