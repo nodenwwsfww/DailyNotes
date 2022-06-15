@@ -1,17 +1,21 @@
 <template>
-    <b-select
-        class="language-selector__container"
+  <div class="language-selector__container">
+    <label>
+      <select
         v-model="$i18n.locale"
-        @select="updateLanguage($event.target.value)"
-    >
-      <option
+        @change="updateLanguage($event.target.value)"
+        class="js_language_selector"
+      >
+        <option
           v-for="(o, i) in LOCALES"
           :key="i"
           :value="o.value"
           :selected="o.value === defaultLocale"
-      >{{ o.caption }}</option
-      >
-    </b-select>
+          >{{ o.caption }}</option
+        >
+      </select>
+    </label>
+  </div>
 </template>
 
 <script>
