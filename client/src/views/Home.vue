@@ -5,21 +5,23 @@
       v-show="!sidebar.hide"
     >
       <div class="columns light-white center-columns text-center">
-        <div class="column">
+        <div class="row">
           <LanguageSelector/>
-          <i18n path="tooltip.today">
-            <b-tooltip label="$t('tooltip.today')" position="is-bottom">
-              <div @click="today()">
-                <b-icon
-                  icon="book-open"
-                  size="is-medium"
-                  style="margin-top: .8em"
-                  class="alt-button"
-                >
-                </b-icon>
-              </div>
-            </b-tooltip>
-          </i18n>
+          <div class="column">
+            <i18n path="tooltip.today">
+              <b-tooltip label="$t('tooltip.today')" position="is-bottom">
+                <div @click="today()">
+                  <b-icon
+                      icon="book-open"
+                      size="is-medium"
+                      style="margin-top: .8em"
+                      class="alt-button"
+                  >
+                  </b-icon>
+                </div>
+              </b-tooltip>
+            </i18n>
+          </div>
         </div>
       </div>
       <Calendar />
