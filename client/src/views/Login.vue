@@ -103,7 +103,7 @@ export default class Login extends Vue {
 }
 </script>
 
-<style scope lang="scss">
+<style scoped lang="scss">
 .language-selector__container {
 select {
   background-color: white;
