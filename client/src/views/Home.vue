@@ -5,8 +5,8 @@
       v-show="!sidebar.hide"
     >
       <div class="columns light-white center-columns text-center">
+        <LanguageSelector/>
         <div class="column">
-          <LanguageSelector/>
           <i18n path="tooltip.today">
             <b-tooltip label="$t('tooltip.today')" position="is-bottom">
               <div @click="today()">

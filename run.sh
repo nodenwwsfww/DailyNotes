@@ -1,5 +1,10 @@
 #!/bin/sh
 
+echo building
+cd ./client
+npm run build
+cd ../
+
 if test -f "./config/.env"; then
   . ./config/.env
 fi
@@ -16,4 +21,4 @@ flask db upgrade
 
 ./verify_data_migrations.py
 s
-exec gunicorn server:app -b 0.0.0.0:5050
+exec gunicorn server:app -b 0.0.0.0:5080
