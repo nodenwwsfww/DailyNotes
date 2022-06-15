@@ -45,4 +45,4 @@ export default {
 };
 </script>
 
-<style scoped src="./LanguageSelector.scss" lang="scss"></style>
+<!--<style scoped src="./LanguageSelector.scss" lang="scss"></style>-->
