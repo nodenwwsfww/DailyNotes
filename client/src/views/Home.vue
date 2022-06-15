@@ -5,7 +5,7 @@
       v-show="!sidebar.hide"
     >
       <div class="columns light-white center-columns text-center selectors-parent">
-        <LanguageSelector style="display: inline-block;"/>
+        <LanguageSelector style="display: inline-block;" id="lang-selector"/>
         <div class="column selectors-child">
           <i18n path="tooltip.today">
             <b-tooltip label="$t('tooltip.today')" position="is-bottom">
@@ -123,5 +123,4 @@ export default class Admin extends Vue {
 .selectors-child {
   display: inline-block;
 }
-
 </style>
