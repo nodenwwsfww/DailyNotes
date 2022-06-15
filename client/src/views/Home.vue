@@ -4,11 +4,9 @@
       class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
       v-show="!sidebar.hide"
     >
-      <div class="language-selector__container">
-        <LanguageSelector/>
-      </div>
-      <div class="columns light-white center-columns text-center">
-        <div class="column">
+      <div class="columns light-white center-columns text-center selectors-parent">
+        <LanguageSelector style="display: inline-block;"/>
+        <div class="column selectors-child">
           <i18n path="tooltip.today">
             <b-tooltip label="$t('tooltip.today')" position="is-bottom">
               <div @click="today()">
@@ -116,4 +114,14 @@ export default class Admin extends Vue {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+.selectors-parent {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.selectors-child {
+  display: inline-block;
+}
+
 </style>
