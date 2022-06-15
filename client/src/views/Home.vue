@@ -6,7 +6,6 @@
     >
       <div class="columns light-white center-columns text-center">
         <div class="row">
-          <LanguageSelector/>
           <div class="column">
             <i18n path="tooltip.today">
               <b-tooltip label="$t('tooltip.today')" position="is-bottom">
@@ -24,6 +23,7 @@
           </div>
         </div>
       </div>
+      <LanguageSelector/>
       <Calendar />
       <Tags />
     </div>
