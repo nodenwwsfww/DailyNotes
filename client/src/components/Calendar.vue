@@ -1,7 +1,7 @@
 <template>
   <b-datepicker
     inline
-    :locale="$i18n.locale"
+    locale="ru-RU"
     v-model="sidebar.date"
     indicators="bars"
     :events="sidebar.events"
