@@ -103,4 +103,23 @@ export default class Login extends Vue {
 }
 </script>
 
-<style scoped src="@/components/LanguageSelector.scss" lang="scss"></style>
+<style scope lang="scss">
+.language-selector__container {
+select {
+  background-color: white;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #3E3D40;
+  font-family: SourceSansPro, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  height: 40px;
+  min-width: 80px;
+  padding: 0 20px 0 16px;
+  outline: none;
+  margin-bottom: 10px;
+}
+}
+
+</style>
