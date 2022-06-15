@@ -23,7 +23,6 @@
           </div>
         </div>
       </div>
-      <LanguageSelector/>
       <Calendar />
       <Tags />
     </div>
