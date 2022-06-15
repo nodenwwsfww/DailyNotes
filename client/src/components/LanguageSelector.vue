@@ -15,20 +15,18 @@
         >
       </select>
     </label>-->
-    <b-field label="Locale">
-      <b-select
-          v-model="$i18n.locale"
-          @select="updateLanguage($event.target.value)"
+    <b-select
+        v-model="$i18n.locale"
+        @select="updateLanguage($event.target.value)"
+    >
+      <option
+          v-for="(o, i) in LOCALES"
+          :key="i"
+          :value="o.value"
+          :selected="o.value === defaultLocale"
+      >{{ o.caption }}</option
       >
-        <option
-            v-for="(o, i) in LOCALES"
-            :key="i"
-            :value="o.value"
-            :selected="o.value === defaultLocale"
-        >{{ o.caption }}</option
-        >
-      </b-select>
-    </b-field>
+    </b-select>
   </div>
 </template>
 
