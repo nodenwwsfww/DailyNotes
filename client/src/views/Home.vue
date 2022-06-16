@@ -5,7 +5,6 @@
       v-show="!sidebar.hide"
     >
       <div class="columns light-white center-columns text-center selectors-parent">
-        <LanguageSelector style="display: inline-block;" id="lang-selector"/>
         <div class="column selectors-child">
           <i18n path="tooltip.today">
             <b-tooltip label="$t('tooltip.today')" position="is-bottom">
@@ -20,6 +19,7 @@
               </div>
             </b-tooltip>
           </i18n>
+          <LanguageSelector style="display: inline-block;" id="lang-selector"/>
         </div>
       </div>
       <Calendar />
