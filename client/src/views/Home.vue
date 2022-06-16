@@ -7,26 +7,25 @@
       <div
         class="columns light-white center-columns text-center selectors-parent"
       >
-        <button>Test</button>
-<!--        <div class="column selectors-child">-->
-<!--          <i18n path="tooltip.today">-->
-<!--            <b-tooltip label="$t('tooltip.today')" position="is-bottom">-->
-<!--              <div @click="today()">-->
-<!--                <b-icon-->
-<!--                  icon="book-open"-->
-<!--                  size="is-medium"-->
-<!--                  style="margin-top: .8em"-->
-<!--                  class="alt-button"-->
-<!--                >-->
-<!--                </b-icon>-->
-<!--              </div>-->
-<!--            </b-tooltip>-->
-<!--          </i18n>-->
-<!--          <LanguageSelector style="margin-top: 5px;" />-->
-<!--        </div>-->
+        <div class="column selectors-child">
+          <i18n path="tooltip.today">
+            <b-tooltip label="$t('tooltip.today')" position="is-bottom">
+              <div @click="today()">
+                <b-icon
+                  icon="book-open"
+                  size="is-medium"
+                  style="margin-top: .8em"
+                  class="alt-button"
+                >
+                </b-icon>
+              </div>
+            </b-tooltip>
+          </i18n>
+          <LanguageSelector style="margin-top: 5px;" />
+        </div>
       </div>
-      <!--      <Calendar/>
-      <Tags />-->
+      <Calendar />
+      <Tags />
     </div>
     <div class="column no-padding main-area" @click="focusEditor">
       <router-view :key="$route.path"></router-view>
@@ -61,7 +60,8 @@ import { defaultLocale } from "@/i18n";
   },
   metaInfo: {
     title: "Home"
-  }
+  },
+  data: () => ({ sidebarShow: false })
 })
 export default class Admin extends Vue {
   public auth_timer: any = null;
