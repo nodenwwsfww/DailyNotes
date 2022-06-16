@@ -53,7 +53,7 @@
           <b-icon icon="chevron-left"></b-icon>
         </div>
         <div class="header-title light-white">
-          {{ formatDate(new Date(options.title), $i18n.locale) }}
+          {{ formatDate(options.title, $i18n.locale) }}
         </div>
         <div @click="nextDay()" class="alt-button" v-if="options.showDateNavs">
           <b-icon icon="chevron-right"></b-icon>
