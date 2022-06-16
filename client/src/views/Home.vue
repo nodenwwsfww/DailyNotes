@@ -19,7 +19,7 @@
               </div>
             </b-tooltip>
           </i18n>
-          <LanguageSelector style="display: inline-block;" id="lang-selector"/>
+          <LanguageSelector style="margin-top: 5px;"/>
         </div>
       </div>
       <Calendar />

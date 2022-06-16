@@ -1,5 +1,7 @@
 <template>
-  <router-view></router-view>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -7,7 +9,6 @@ import {SharedBuefy} from './services/sharedBuefy';
 import Header from "@/components/Header";
 import NoteCard from "@/components/NoteCard";
 import ErrorPage from "@/views/ErrorPage";
-
 
 export default {
   name: 'App',
