@@ -1,6 +1,6 @@
 <template>
   <div class="columns no-margin is-mobile full-height">
-    <Header :options="headerOptions"></Header>
+    <Header></Header>
     <div
       class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
       v-show="!sidebar.hide"
