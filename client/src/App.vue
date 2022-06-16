@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Calendar/>
     <router-view></router-view>
   </div>
 </template>
@@ -18,7 +17,6 @@ export default {
     titleTemplate: '%s | DailyNotes'
   },
   components: {
-    Calendar
   },
   mounted: function() {
     SharedBuefy.notifications = this.$buefy.toast;
