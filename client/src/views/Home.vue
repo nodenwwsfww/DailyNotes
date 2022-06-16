@@ -41,6 +41,7 @@ import Component from "vue-class-component";
 import Calendar from "@/components/Calendar.vue";
 import Tags from "@/components/Tags.vue";
 import LanguageSelector from "@/components/LanguageSelector.vue";
+import Header from "@/components/Header.vue";
 
 import { updateJWT } from "../services/user";
 
@@ -51,9 +52,6 @@ const MINUTES = 60;
 const SECONDS = 60;
 const HOUR = MINUTES * SECONDS * 1000; // MS in an hour
 
-import { LOCALES, Locales } from "@/i18n/locales";
-import { defaultLocale } from "@/i18n";
-import Header from "@/components/Header.vue";
 @Component({
   components: {
     LanguageSelector,
