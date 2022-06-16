@@ -155,6 +155,7 @@ export default class Header extends Vue {
     this.sidebar.hide = show;
   }
 
+  public formatDate = formatDate;
   public newNote() {
     this.$router.push({ name: "new-note" }).catch(err => {});
   }
