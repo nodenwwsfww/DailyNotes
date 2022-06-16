@@ -10,7 +10,7 @@ const store = new Vuex.Store<RootState>({
         version: '1.0.0'
     },
     modules: {
-        language
+        language,
     },
 })
 
