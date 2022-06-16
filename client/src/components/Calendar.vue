@@ -44,7 +44,7 @@ export default class Calendar extends Vue {
 <style scoped lang="css">
 @media (max-width:  390px) {
   .calendar-date-picker {
-    width: 60%;
+    width: 120%;
   }
 }
 </style>
