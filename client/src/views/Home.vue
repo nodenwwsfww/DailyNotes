@@ -1,52 +1,34 @@
 <template>
   <div class="columns no-margin is-mobile full-height">
     <div
-      class="columns light-white center-columns text-center selectors-parent"
+      class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
+      v-show="!sidebar.hide"
     >
-      <div class="column selectors-child">
-        <i18n path="tooltip.today">
-          <b-tooltip label="$t('tooltip.today')" position="is-bottom">
-            <div @click="today()">
-              <b-icon
-                icon="book-open"
-                size="is-medium"
-                style="margin-top: .8em"
-                class="alt-button"
-              >
-              </b-icon>
-            </div>
-          </b-tooltip>
-        </i18n>
-        <LanguageSelector style="margin-top: 5px;" />
+      <div
+        class="columns light-white center-columns text-center selectors-parent"
+      >
+        <div class="column selectors-child">
+          <i18n path="tooltip.today">
+            <b-tooltip label="$t('tooltip.today')" position="is-bottom">
+              <div @click="today()">
+                <b-icon
+                  icon="book-open"
+                  size="is-medium"
+                  style="margin-top: .8em"
+                  class="alt-button"
+                >
+                </b-icon>
+              </div>
+            </b-tooltip>
+          </i18n>
+          <LanguageSelector style="margin-top: 5px;" />
+        </div>
       </div>
-      <!--    <div-->
-      <!--      class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"-->
-      <!--      v-show="!sidebar.hide"-->
-      <!--    >-->
-      <!--      <div class="columns light-white center-columns text-center selectors-parent">-->
-      <!--        <div class="column selectors-child">-->
-      <!--          <i18n path="tooltip.today">-->
-      <!--            <b-tooltip label="$t('tooltip.today')" position="is-bottom">-->
-      <!--              <div @click="today()">-->
-      <!--                <b-icon-->
-      <!--                    icon="book-open"-->
-      <!--                    size="is-medium"-->
-      <!--                    style="margin-top: .8em"-->
-      <!--                    class="alt-button"-->
-      <!--                >-->
-      <!--                </b-icon>-->
-      <!--              </div>-->
-      <!--            </b-tooltip>-->
-      <!--          </i18n>-->
-      <!--          <LanguageSelector style="margin-top: 5px;"/>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--      <Calendar/>-->
-      <!--      <Tags />-->
-      <!--    </div>-->
-      <div class="column no-padding main-area" @click="focusEditor">
-        <router-view :key="$route.path"></router-view>
-      </div>
+      <!--      <Calendar/>
+      <Tags />-->
+    </div>
+    <div class="column no-padding main-area" @click="focusEditor">
+      <router-view :key="$route.path"></router-view>
     </div>
   </div>
 </template>
@@ -59,7 +41,7 @@ import Calendar from "@/components/Calendar.vue";
 import Tags from "@/components/Tags.vue";
 import LanguageSelector from "@/components/LanguageSelector.vue";
 
-import { updateJWT } from "@/services/user";
+import { updateJWT } from "../services/user";
 
 import SidebarInst from "../services/sidebar";
 import eventHub from "../services/eventHub";
@@ -68,6 +50,8 @@ const MINUTES = 60;
 const SECONDS = 60;
 const HOUR = MINUTES * SECONDS * 1000; // MS in an hour
 
+import { LOCALES, Locales } from "@/i18n/locales";
+import { defaultLocale } from "@/i18n";
 @Component({
   components: {
     LanguageSelector,
@@ -104,6 +88,8 @@ export default class Admin extends Vue {
 </script>
 
 <style scoped>
+@media screen and (max-device-width: 620px) {
+}
 .no-margin {
   margin: 0px;
 }
