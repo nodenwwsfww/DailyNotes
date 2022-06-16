@@ -87,7 +87,14 @@ export default class Day extends Vue {
     this.sidebar.updateDate(this.$route);
     this.getDayData();
 
-    this.headerOptions.title = format(date, 'EEE. MMM dd, yyyy');
+    const formatter = new Intl.DateTimeFormat(this.$i18n.locale, {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+
+    this.headerOptions.title = formatter.format(date);
     this.title = this.headerOptions.title;
 
     this.$root.$on('taskUpdated', (data: any) => {
