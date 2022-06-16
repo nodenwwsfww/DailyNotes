@@ -15,7 +15,6 @@ export default {
     titleTemplate: "%s | DailyNotes"
   },
   components: {
-    Header
   },
   mounted: function() {
     SharedBuefy.notifications = this.$buefy.toast;
