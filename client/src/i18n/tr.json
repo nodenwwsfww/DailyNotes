@@ -26,7 +26,9 @@
     "Search-notes": "Arama notları",
     "Save": "Kaydetmek",
     "Export-Notes": "İhracat Notları",
-    "Logout": "Çıkış Yap"
+    "Logout": "Çıkış Yap",
+    "enable-auto-save": "Otomatik Kaydetmeyi Etkinleştir",
+    "disable-auto-save": "Otomatik Kaydetmeyi Devre Dışı Bırak"
   },
   "errors": {
     "notfound": "Sayfa bulunamadı. Lütfen geridönün ve tekrar deneyin.",

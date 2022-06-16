@@ -83,11 +83,11 @@
                 v-model="sidebar.autoSave"
                 @input="sidebar.toggleAutoSave"
               >
-                {{ sidebar.autoSave ? 'Disable Auto-Save' : 'Enable Auto-Save' }}
+                {{ sidebar.autoSave ? $t('buttons.disable-auto-save').toString() : $t('buttons.enable-auto-save').toString() }}
               </b-switch>
             </b-dropdown-item>
-            <b-dropdown-item @click="exportNotes()">{{$t('buttons.Logout').toString()}}</b-dropdown-item>
-            <b-dropdown-item @click="logout()">{{$t('buttons.Export-Notes').toString()}}</b-dropdown-item>
+            <b-dropdown-item @click="logout()">{{$t('buttons.Logout').toString()}}</b-dropdown-item>
+            <b-dropdown-item @click="exportNotes()">{{$t('buttons.Export-Notes').toString()}}</b-dropdown-item>
           </b-dropdown>
         </div>
       </div>

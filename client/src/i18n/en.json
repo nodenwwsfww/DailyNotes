@@ -26,8 +26,9 @@
     "Search-notes": "Search notes",
     "Save": "Save",
     "Export-Notes": "Export Notes",
-    "Logout": "Logout"
-
+    "Logout": "Logout",
+    "enable-auto-save": "Enable Auto-Save",
+    "disable-auto-save": "Disable Auto-Save"
   },
   "errors": {
     "notfound": "Page Not Found. Please go back and try again.",
