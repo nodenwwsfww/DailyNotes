@@ -12,12 +12,6 @@ const store = new Vuex.Store<RootState>({
     modules: {
         language
     },
-    mutations: {
-
-    },
-    actions: {
-
-    },
 })
 
 export default store

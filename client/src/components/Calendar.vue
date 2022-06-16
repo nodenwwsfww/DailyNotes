@@ -1,7 +1,7 @@
 <template>
   <b-datepicker
     inline
-    :locale="ru-RU"
+    :locale="$i18n.locale"
     v-model="sidebar.date"
     indicators="bars"
     :events="sidebar.events"
@@ -28,9 +28,13 @@ export default class Calendar extends Vue {
   }
 
   public changeDate(value: any) {
-    if (value) {
+    if (value && (value instanceof Date)) {
+      const date: Date = value;
+
+      console.log(date, format(date, 'MM-dd-yyyy'))
+      console.log(date, date.toLocaleDateString(this.$i18n.locale));
       this.$router.push({ name: 'day-id', params: {
-        id: format(value, 'MM-dd-yyyy')
+        id: format(date, 'MM-dd-yyyy', )
       } });
     }
   }
