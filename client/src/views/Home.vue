@@ -1,5 +1,6 @@
 <template>
   <div class="columns no-margin is-mobile full-height">
+    <Header/>
     <div
       class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
       v-show="!sidebar.hide"
@@ -52,11 +53,13 @@ const HOUR = MINUTES * SECONDS * 1000; // MS in an hour
 
 import { LOCALES, Locales } from "@/i18n/locales";
 import { defaultLocale } from "@/i18n";
+import Header from "@/components/Header.vue";
 @Component({
   components: {
     LanguageSelector,
     Calendar,
-    Tags
+    Tags,
+    Header
   },
   metaInfo: {
     title: "Home"
