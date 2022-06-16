@@ -1,9 +1,9 @@
 <template>
   <div class="columns no-margin is-mobile full-height">
-    <Header/>
+    <Header :options="headerOptions"></Header>
     <div
       class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
-      v-show="!sidebar.hide"
+      v-show="sidebar.hide"
     >
       <div
         class="columns light-white center-columns text-center selectors-parent"
@@ -43,6 +43,7 @@ import Tags from "@/components/Tags.vue";
 import LanguageSelector from "@/components/LanguageSelector.vue";
 import Header from "@/components/Header.vue";
 
+import {IHeaderOptions} from '../interfaces';
 import { updateJWT } from "../services/user";
 
 import SidebarInst from "../services/sidebar";
@@ -67,6 +68,11 @@ const HOUR = MINUTES * SECONDS * 1000; // MS in an hour
 export default class Admin extends Vue {
   public auth_timer: any = null;
   public sidebar = SidebarInst;
+
+  public headerOptions: IHeaderOptions = {
+    title: '',
+    saveDisabled: true,
+  };
 
   mounted() {
     // Get new JWT every hour
