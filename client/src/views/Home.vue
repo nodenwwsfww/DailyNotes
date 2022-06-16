@@ -3,7 +3,7 @@
     <Header :options="headerOptions"></Header>
     <div
       class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
-      v-show="sidebar.hide"
+      v-show="!sidebar.hide"
     >
       <div
         class="columns light-white center-columns text-center selectors-parent"
