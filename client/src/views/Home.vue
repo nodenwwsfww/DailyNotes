@@ -7,22 +7,23 @@
       <div
         class="columns light-white center-columns text-center selectors-parent"
       >
-        <div class="column selectors-child">
-          <i18n path="tooltip.today">
-            <b-tooltip label="$t('tooltip.today')" position="is-bottom">
-              <div @click="today()">
-                <b-icon
-                  icon="book-open"
-                  size="is-medium"
-                  style="margin-top: .8em"
-                  class="alt-button"
-                >
-                </b-icon>
-              </div>
-            </b-tooltip>
-          </i18n>
-          <LanguageSelector style="margin-top: 5px;" />
-        </div>
+        <button>Test</button>
+<!--        <div class="column selectors-child">-->
+<!--          <i18n path="tooltip.today">-->
+<!--            <b-tooltip label="$t('tooltip.today')" position="is-bottom">-->
+<!--              <div @click="today()">-->
+<!--                <b-icon-->
+<!--                  icon="book-open"-->
+<!--                  size="is-medium"-->
+<!--                  style="margin-top: .8em"-->
+<!--                  class="alt-button"-->
+<!--                >-->
+<!--                </b-icon>-->
+<!--              </div>-->
+<!--            </b-tooltip>-->
+<!--          </i18n>-->
+<!--          <LanguageSelector style="margin-top: 5px;" />-->
+<!--        </div>-->
       </div>
       <!--      <Calendar/>
       <Tags />-->
