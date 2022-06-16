@@ -1,27 +1,29 @@
 <template>
   <div>
+    <Header options="" />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import {SharedBuefy} from './services/sharedBuefy';
+import { SharedBuefy } from "./services/sharedBuefy";
 import Header from "@/components/Header";
 import NoteCard from "@/components/NoteCard";
 import ErrorPage from "@/views/ErrorPage";
 
 export default {
-  name: 'App',
+  name: "App",
   metaInfo: {
-    titleTemplate: '%s | DailyNotes'
+    titleTemplate: "%s | DailyNotes"
   },
   components: {
+    Header
   },
   mounted: function() {
     SharedBuefy.notifications = this.$buefy.toast;
     SharedBuefy.dialog = this.$buefy.dialog;
   }
-}
+};
 </script>
 
 <style lang="sass">
@@ -44,21 +46,24 @@ html, body
 </style>
 
 <style>
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
 :root {
   --main-bg-color: #263238;
   --main-bg-darker: #212b30;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 
-.pagination-previous, .pagination-next {
+.pagination-previous,
+.pagination-next {
   border: 0;
 }
 
@@ -66,14 +71,15 @@ html, body
   width: 100%;
 }
 
-html, body {
+html,
+body {
   overflow: hidden;
-  font-family: 'Fira Code', monospace;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Fira Code", monospace;
+  font-family: "Montserrat", sans-serif;
 }
 
 *:focus {
-  outline:none;
+  outline: none;
   border: transparent;
 }
 
@@ -93,7 +99,8 @@ html, body {
   height: auto;
 }
 
-.fas.huge-icon, .fas.huge-icon::before {
+.fas.huge-icon,
+.fas.huge-icon::before {
   font-size: 2.5em !important;
 }
 
@@ -142,8 +149,8 @@ html, body {
 .header-loading > .loading-overlay .loading-icon::after {
   width: 1em !important;
   height: 1em !important;
-  top: calc(50% - .5em) !important;
-  left: calc(50% - .5em) !important;
+  top: calc(50% - 0.5em) !important;
+  left: calc(50% - 0.5em) !important;
 }
 
 .notification.is-dark {
