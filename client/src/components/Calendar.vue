@@ -1,5 +1,5 @@
 <template>
-  <b-datepicker
+  <b-datepicker class="calendar-date-picker"
     inline
     :locale="$i18n.locale"
     v-model="sidebar.date"
@@ -40,3 +40,11 @@ export default class Calendar extends Vue {
   }
 }
 </script>
+
+<style scoped lang="css">
+@media (max-width:  320px) {
+  .calendar-date-picker {
+    max-width: 100%;
+  }
+}
+</style>

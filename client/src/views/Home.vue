@@ -22,7 +22,7 @@
           <LanguageSelector style="margin-top: 5px;"/>
         </div>
       </div>
-      <Calendar />
+      <Calendar/>
       <Tags />
     </div>
     <div class="column no-padding main-area" @click="focusEditor">
@@ -87,6 +87,7 @@ export default class Admin extends Vue {
 </script>
 
 <style scoped>
+
 .no-margin {
   margin: 0px;
 }
