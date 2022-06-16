@@ -70,7 +70,7 @@ export default class Admin extends Vue {
   public sidebar = SidebarInst;
 
   public headerOptions: IHeaderOptions = {
-    title: ''
+    title: 'Home'
   };
 
   mounted() {
