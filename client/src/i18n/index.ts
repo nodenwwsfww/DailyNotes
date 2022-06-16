@@ -11,3 +11,13 @@ export const messages = {
 };
 
 export const defaultLocale = Locales.EN;
+
+
+export const formatDate = (date: Date, locale: string) => {
+  const formatter = new Intl.DateTimeFormat(locale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  return formatter.format(date);
+}

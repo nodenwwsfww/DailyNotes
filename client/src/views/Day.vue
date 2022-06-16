@@ -30,6 +30,7 @@ import UnsavedForm from '@/components/UnsavedForm.vue';
 import {IHeaderOptions} from '../interfaces';
 
 import {newDay} from '../services/consts';
+import {formatDate} from "@/i18n";
 
 
 Component.registerHooks([
@@ -87,14 +88,8 @@ export default class Day extends Vue {
     this.sidebar.updateDate(this.$route);
     this.getDayData();
 
-    const formatter = new Intl.DateTimeFormat(this.$i18n.locale, {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
 
-
-    this.headerOptions.title = formatter.format(date);
+    this.headerOptions.title = formatDate(date, this.$i18n.locale)
     this.title = this.headerOptions.title;
 
     this.$root.$on('taskUpdated', (data: any) => {
