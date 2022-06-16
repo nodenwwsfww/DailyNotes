@@ -18,14 +18,14 @@
         </div>
         <div class="level-item alt-button" v-if="!options.hideCreate">
           <div @click="newNote()">
-            <b-tooltip :label="$t('titles.create-note')" position="is-bottom">
+            <b-tooltip :label="$t('titles.create-note').toString()" position="is-bottom">
               <b-icon icon="plus"></b-icon>
             </b-tooltip>
           </div>
         </div>
         <div class="level-item alt-button" v-if="sidebar.tasks.length">
           <b-dropdown aria-role="list">
-            <b-tooltip :label="$t('buttons.Tasks')" position="is-bottom" slot="trigger" role="button">
+            <b-tooltip :label="$t('buttons.Tasks').toString()" position="is-bottom" slot="trigger" role="button">
               <b-icon icon="tasks"></b-icon>
             </b-tooltip>
             <b-dropdown-item custom v-for="task of sidebar.tasks" v-bind:key="task.uuid">
@@ -35,7 +35,7 @@
         </div>
         <div class="level-item alt-button">
           <div @click="goToSearch()">
-            <b-tooltip :label="$t('buttons.Search-notes')" position="is-bottom">
+            <b-tooltip :label="$t('buttons.Search-notes').toString()" position="is-bottom">
               <b-icon icon="search"></b-icon>
             </b-tooltip>
           </div>
@@ -62,7 +62,7 @@
           v-bind:class="{ 'save-disabled': options.saveDisabled }"
           @click="save()"
         >
-          <b-tooltip :label="$t('buttons.Save')" position="is-bottom">
+          <b-tooltip :label="$t('buttons.Save').toString()" position="is-bottom">
             <b-icon icon="save"></b-icon>
           </b-tooltip>
         </div>
@@ -71,7 +71,7 @@
           v-show="options.showDelete"
           @click="deleteNote()"
         >
-          <b-tooltip :label="$t('buttons.Delete')" position="is-bottom">
+          <b-tooltip :label="$t('buttons.Delete').toString()" position="is-bottom">
             <b-icon icon="trash-alt"></b-icon>
           </b-tooltip>
         </div>
@@ -86,8 +86,8 @@
                 {{ sidebar.autoSave ? 'Disable Auto-Save' : 'Enable Auto-Save' }}
               </b-switch>
             </b-dropdown-item>
-            <b-dropdown-item @click="exportNotes()">{{$t('buttons.Logout')}}</b-dropdown-item>
-            <b-dropdown-item @click="logout()">{{$t('buttons.Export-Notes')}}</b-dropdown-item>
+            <b-dropdown-item @click="exportNotes()">{{$t('buttons.Logout').toString()}}</b-dropdown-item>
+            <b-dropdown-item @click="logout()">{{$t('buttons.Export-Notes').toString()}}</b-dropdown-item>
           </b-dropdown>
         </div>
       </div>

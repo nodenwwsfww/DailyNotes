@@ -9,7 +9,6 @@ import {SharedBuefy} from './services/sharedBuefy';
 import Header from "@/components/Header";
 import NoteCard from "@/components/NoteCard";
 import ErrorPage from "@/views/ErrorPage";
-import Calendar from '@/components/Calendar';
 
 export default {
   name: 'App',

@@ -22,14 +22,12 @@ import Component from 'vue-class-component';
 import {Requests} from '../services/requests';
 import {setToken} from '../services/user';
 import LanguageSelector from "@/components/LanguageSelector.vue";
-import Calendar from "@/components/Calendar.vue";
 
 declare var process: any;
 
 @Component({
   components: {
     LanguageSelector,
-    Calendar,
   },
   metaInfo: {
     title: 'Login'

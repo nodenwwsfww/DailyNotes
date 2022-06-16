@@ -1,33 +1,33 @@
 <template>
   <div class="columns no-margin is-mobile full-height">
-    <div
-      class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
-      v-show="!sidebar.hide"
-    >
-      <div class="columns light-white center-columns text-center selectors-parent">
-        <div class="column selectors-child">
-          <i18n path="tooltip.today">
-            <b-tooltip label="$t('tooltip.today')" position="is-bottom">
-              <div @click="today()">
-                <b-icon
-                    icon="book-open"
-                    size="is-medium"
-                    style="margin-top: .8em"
-                    class="alt-button"
-                >
-                </b-icon>
-              </div>
-            </b-tooltip>
-          </i18n>
-          <LanguageSelector style="margin-top: 5px;"/>
-        </div>
-      </div>
-      <Calendar/>
-      <Tags />
-    </div>
-    <div class="column no-padding main-area" @click="focusEditor">
-      <router-view :key="$route.path"></router-view>
-    </div>
+<!--    <div-->
+<!--      class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"-->
+<!--      v-show="!sidebar.hide"-->
+<!--    >-->
+<!--      <div class="columns light-white center-columns text-center selectors-parent">-->
+<!--        <div class="column selectors-child">-->
+<!--          <i18n path="tooltip.today">-->
+<!--            <b-tooltip label="$t('tooltip.today')" position="is-bottom">-->
+<!--              <div @click="today()">-->
+<!--                <b-icon-->
+<!--                    icon="book-open"-->
+<!--                    size="is-medium"-->
+<!--                    style="margin-top: .8em"-->
+<!--                    class="alt-button"-->
+<!--                >-->
+<!--                </b-icon>-->
+<!--              </div>-->
+<!--            </b-tooltip>-->
+<!--          </i18n>-->
+<!--          <LanguageSelector style="margin-top: 5px;"/>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <Calendar/>-->
+<!--      <Tags />-->
+<!--    </div>-->
+<!--    <div class="column no-padding main-area" @click="focusEditor">-->
+<!--      <router-view :key="$route.path"></router-view>-->
+<!--    </div>-->
   </div>
 </template>
 
