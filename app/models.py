@@ -122,8 +122,8 @@ class Note(db.Model):
       'uuid': self.uuid,
       'data': aes_decrypt(self.text),
       'title': aes_decrypt(self.title),
-      'date': aes_decrypt(self.date),
-      'is_date': aes_decrypt(self.is_date),
+      'date': self.date,
+      'is_date': self.is_date,
     }
 
 
