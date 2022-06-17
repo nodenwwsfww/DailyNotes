@@ -118,7 +118,7 @@ class Note(db.Model):
 
   @property
   def serialize(self):
-    return aes_decrypt({
+    return aes_encrypt({
       'uuid': self.uuid,
       'data': self.text,
       'title': self.title,
