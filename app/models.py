@@ -119,11 +119,11 @@ class Note(db.Model):
   @property
   def serialize(self):
     return {
-      'uuid': self.uuid,
+      'uuid': aes_decrypt(self.uuid),
       'data': aes_decrypt(self.data),
-      'title': self.title,
-      'date': self.date,
-      'is_date': self.is_date,
+      'title': aes_decrypt(self.title),
+      'date': aes_decrypt(self.date),
+      'is_date': aes_decrypt(self.is_date),
     }
 
 
