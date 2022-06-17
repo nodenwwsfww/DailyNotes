@@ -118,13 +118,13 @@ class Note(db.Model):
 
   @property
   def serialize(self):
-    return {
+    return aes_decrypt({
       'uuid': self.uuid,
       'data': self.text,
       'title': self.title,
       'date': self.date,
       'is_date': self.is_date,
-    }
+    })
 
 
 # Update title automatically
