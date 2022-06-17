@@ -165,7 +165,7 @@ export default class Day extends Vue {
       if (!this.sidebar.autoSave) {
         this.text = this.modifiedText;
       }
-      console.log(res)
+      console.log('result', res)
       this.day.uuid = res.uuid;
 
       // Update the indicators

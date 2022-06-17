@@ -74,7 +74,7 @@ export const NoteService = {
    */
   saveDay: async (noteData: INote): Promise<INote> => {
     const res = await Requests.put('/save_day', noteData);
-    return res.data.note;
+    return res.data;
   },
 
   /**
