@@ -6,7 +6,7 @@
           <div @click="newNote()">
             <b-tooltip
               :label="$t('titles.create-note').toString()"
-              position="is-bottom"
+              position="is-right"
               z-index="9999"
             >
               <b-icon icon="plus"></b-icon>
