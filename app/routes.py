@@ -86,10 +86,11 @@ def save_day():
   db.session.flush()
   db.session.commit()
 
-  some_encode_data = note.serialize
-  print(some_encode_data)
+  response_data = {
+    "uuid": note.uuid
+  }
 
-  return jsonify(note.serialize), 200
+  return jsonify(response_data), 200
 
 
 @app.route('/api/create_note', methods=['POST'])
