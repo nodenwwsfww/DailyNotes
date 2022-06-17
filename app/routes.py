@@ -112,7 +112,7 @@ def create_note():
   if not user:
     abort(400)
 
-  note = Note(user_id=user.uuid, text=data)
+  note = Note(user_id=user.uuid, text=data, title="")
 
   db.session.add(note)
   db.session.flush()
