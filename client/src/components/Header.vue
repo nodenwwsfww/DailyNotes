@@ -36,7 +36,7 @@
           <div @click="goToSearch()">
             <b-tooltip
               :label="$t('buttons.Search-notes').toString()"
-              position="is-bottom"
+              position="is-right"
             >
               <b-icon icon="search"></b-icon>
             </b-tooltip>
