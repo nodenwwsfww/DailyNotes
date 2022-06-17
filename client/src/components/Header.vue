@@ -2,12 +2,6 @@
   <div class="header-wrapper light-white" @click="prevent($event)">
     <div class="main-header level is-mobile">
       <div class="level-left">
-        <div class="level-item alt-button" @click="toggleSidebar(true)">
-          <b-icon v-show="!sidebar.hide" icon="grip-lines"> </b-icon>
-        </div>
-        <div class="level-item alt-button" @click="toggleSidebar()">
-          <b-icon v-show="sidebar.hide" icon="grip-lines-vertical"> </b-icon>
-        </div>
         <div class="level-item alt-button" v-if="!options.hideCreate">
           <div @click="newNote()">
             <b-tooltip

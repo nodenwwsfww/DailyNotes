@@ -8,6 +8,7 @@
 import { SharedBuefy } from "./services/sharedBuefy";
 import NoteCard from "@/components/NoteCard";
 import ErrorPage from "@/views/ErrorPage";
+import Home from "@/views/Home";
 
 export default {
   name: "App",
