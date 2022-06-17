@@ -172,6 +172,7 @@ export default class Day extends Vue {
       this.sidebar.getEvents();
       this.sidebar.getSidebarInfo();
     } catch(e) {
+      console.error(e)
       this.$buefy.toast.open({
         duration: 5000,
         message: this.$t('errors.saving-error').toString(),
