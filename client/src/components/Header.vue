@@ -7,7 +7,6 @@
             <b-tooltip
               :label="$t('titles.create-note').toString()"
               position="is-bottom"
-              style="position: absolute"
               z-index="9999"
             >
               <b-icon icon="plus"></b-icon>
@@ -146,10 +145,6 @@ export default class Header extends Vue {
   public sidebar = SidebarInst;
   public options!: IHeaderOptions;
   public isSaving: boolean = false;
-
-  public toggleSidebar(show = false) {
-    this.sidebar.hide = show;
-  }
 
   public formatDate = formatDate;
   public newNote() {

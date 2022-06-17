@@ -1,5 +1,5 @@
 <template>
-  <div class="columns no-margin is-mobile full-height main-element" z-index="4" style="position: relative">
+    <div class="columns no-margin is-mobile full-height main-element">
     <div
       class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd animated-show-element"
       id="home-sidebar-full" style="display: none"
@@ -36,7 +36,7 @@
     <div
       class="column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
       id="home-sidebar-hidden"
-      style="width: 5%;"
+      style="width: 4%;"
     >
       <div class="level-item alt-button" @click="toggleSidebar(true)">
         <b-icon v-show="!sidebar.hide" icon="grip-lines"> </b-icon>
@@ -170,13 +170,13 @@ export default class Admin extends Vue {
 }
 
 @keyframes showSidebar {
-  0%   {width: 5%;}
+  0%   {width: 4%;}
   100% {width: 100%;}
 }
 
 @keyframes hideSidebar {
   0%   {width: 100%;}
-  100% {width: 5%;}
+  100% {width: 4%;}
 }
 
 .full-height {
