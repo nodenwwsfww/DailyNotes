@@ -87,7 +87,7 @@ def save_day():
   db.session.commit()
 
   some_encode_data = note.serialize
-  return jsonify(some_encode_data.decode('utf-8')), 200
+  print(some_encode_data)
 
   return jsonify(note.serialize), 200
 
