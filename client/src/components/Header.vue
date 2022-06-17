@@ -7,7 +7,7 @@
             <b-tooltip
               :label="$t('titles.create-note').toString()"
               position="is-bottom"
-              z-index="2"
+              z-index="999"
             >
               <b-icon icon="plus"></b-icon>
             </b-tooltip>
