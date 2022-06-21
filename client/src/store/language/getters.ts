@@ -4,6 +4,8 @@ import { RootState } from '../types';
 
 export const getters: GetterTree<LanguageState, RootState> = {
   getLanguage(state) {
-    return state.language;
+    let lang = localStorage.getItem("lang");
+    if (!lang) lang = state.language
+    return lang;
   },
 };
