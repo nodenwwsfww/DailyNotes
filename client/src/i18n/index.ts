@@ -20,6 +20,6 @@ export const formatDate = (date: Date | undefined, locale: string) => {
   });
   if (!date) return;
 
-  if (date) console.log(date, typeof date)
-  return formatter.format(date);
+  console.log(date, typeof date)
+  return formatter.format(new Date(date.toString()));
 };
