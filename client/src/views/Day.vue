@@ -1,7 +1,12 @@
 <template>
   <div>
     <Header :options="headerOptions"></Header>
-    <Editor v-if="!isLoading" v-bind:value="text" v-on:valChanged="valChanged" v-on:saveShortcut="saveDay"></Editor>
+    <Editor
+      v-if="!isLoading"
+      v-bind:value="text"
+      v-on:valChanged="valChanged"
+      v-on:saveShortcut="saveDay"
+    ></Editor>
     <div v-else class="loading-wrapper">
       <b-loading :is-full-page="false" :active="isLoading"></b-loading>
     </div>
@@ -9,78 +14,73 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import Vue from "vue";
+import Component from "vue-class-component";
 import { Route } from "vue-router";
-import format from 'date-fns/format';
-import isValid from 'date-fns/isValid';
-import parse from 'date-fns/parse';
-import _ from 'lodash';
+import format from "date-fns/format";
+import isValid from "date-fns/isValid";
+import parse from "date-fns/parse";
+import _ from "lodash";
 
-import SidebarInst from '../services/sidebar';
-import {NoteService} from '../services/notes';
-import {SharedBuefy} from '../services/sharedBuefy';
+import SidebarInst from "../services/sidebar";
+import { NoteService } from "../services/notes";
+import { SharedBuefy } from "../services/sharedBuefy";
 
-import {INote} from '../interfaces';
+import { INote } from "../interfaces";
 
-import Editor from '@/components/Editor.vue';
-import Header from '@/components/Header.vue';
-import UnsavedForm from '@/components/UnsavedForm.vue';
+import Editor from "@/components/Editor.vue";
+import Header from "@/components/Header.vue";
+import UnsavedForm from "@/components/UnsavedForm.vue";
 
-import {IHeaderOptions} from '../interfaces';
+import { IHeaderOptions } from "../interfaces";
 
-import {newDay} from '../services/consts';
-import {formatDate} from "@/i18n";
+import { newDay } from "../services/consts";
+import { formatDate } from "@/i18n";
 
-
-Component.registerHooks([
-  'metaInfo',
-  'beforeRouteUpdate',
-  'beforeRouteLeave'
-]);
+Component.registerHooks(["metaInfo", "beforeRouteUpdate", "beforeRouteLeave"]);
 
 @Component({
   components: {
     Editor,
-    Header,
+    Header
   }
 })
 export default class Day extends Vue {
   public sidebar = SidebarInst;
-  public text: string = '';
-  public modifiedText : string = '';
-  public unsavedChanges : boolean = false;
-  public title: string = '';
+  public text: string = "";
+  public modifiedText: string = "";
+  public unsavedChanges: boolean = false;
+  public title: string = "";
   public day!: INote;
   public isLoading: boolean = false;
   public headerOptions: IHeaderOptions = {
     showDateNavs: true,
     showDelete: false,
-    title: '',
+    title: "",
     saveDisabled: true,
     saveFn: () => this.saveDay(),
-    deleteFn: () => this.deleteNote(),
-  }
+    deleteFn: () => this.deleteNote()
+  };
 
   public metaInfo(): any {
     return {
       title: this.title
     };
-  };
+  }
 
   created() {
-    window.addEventListener('beforeunload', this.unsavedAlert);
+    window.addEventListener("beforeunload", this.unsavedAlert);
   }
 
   mounted() {
-    const date = parse(this.$route.params.id, 'MM-dd-yyyy', new Date());
+    const date = parse(this.$route.params.id, "MM-dd-yyyy", new Date());
     if (!isValid(date)) {
-      this.$router.push({name: 'Home Redirect'});
+      this.$router.push({ name: "Home Redirect" });
       this.$buefy.toast.open({
         duration: 5000,
-        message: this.$t('errors.save-day').toString(),
-        position: 'is-top',
-        type: 'is-danger'
+        message: this.$t("errors.save-day").toString(),
+        position: "is-top",
+        type: "is-danger"
       });
       return;
     }
@@ -88,12 +88,11 @@ export default class Day extends Vue {
     this.sidebar.updateDate(this.$route);
     this.getDayData();
 
-
-    this.headerOptions.title = formatDate(date, this.$i18n.locale)
+    this.headerOptions.title = formatDate(date, this.$i18n.locale);
     this.title = this.headerOptions.title;
 
-    this.$root.$on('taskUpdated', (data: any) => {
-      const {note_id, task, completed} = data;
+    this.$root.$on("taskUpdated", (data: any) => {
+      const { note_id, task, completed } = data;
 
       if (note_id !== this.day.uuid) {
         return;
@@ -102,9 +101,9 @@ export default class Day extends Vue {
       let original = task;
 
       if (!completed) {
-        original = original.replace('- [ ]', '- [x]');
+        original = original.replace("- [ ]", "- [x]");
       } else {
-        original = original.replace('- [x]', '- [ ]');
+        original = original.replace("- [x]", "- [ ]");
       }
 
       this.text = this.text.replace(original, task);
@@ -129,7 +128,7 @@ export default class Day extends Vue {
   }
 
   beforeDestroy() {
-    window.removeEventListener('beforeunload', this.unsavedAlert);
+    window.removeEventListener("beforeunload", this.unsavedAlert);
   }
 
   public async getDayData() {
@@ -142,16 +141,16 @@ export default class Day extends Vue {
     try {
       const res = await NoteService.getDate(this.$route.params.id);
       this.day = res;
-      this.text = this.day.data || '';
+      this.text = this.day.data || "";
 
       this.headerOptions.showDelete = !!this.day.uuid;
     } catch (e) {
       SharedBuefy.openConfirmDialog({
-        message: this.$t('errors.fetch-selected-date').toString(),
+        message: this.$t("errors.fetch-selected-date").toString(),
         onConfirm: () => this.getDayData(),
         onCancel: () => this.setDefaultText(),
-        confirmText: this.$t('buttons.Try-again').toString(),
-        cancelText:  this.$t('buttons.Start-Fresh').toString(),
+        confirmText: this.$t("buttons.Try-again").toString(),
+        cancelText: this.$t("buttons.Start-Fresh").toString()
       });
     }
 
@@ -159,7 +158,7 @@ export default class Day extends Vue {
   }
 
   public async saveDay() {
-    const updatedDay = Object.assign(this.day, {data: this.modifiedText});
+    const updatedDay = Object.assign(this.day, { data: this.modifiedText });
     try {
       const res = await NoteService.saveDay(updatedDay);
       if (!this.sidebar.autoSave) {
@@ -171,12 +170,12 @@ export default class Day extends Vue {
       this.valChanged(this.text);
       this.sidebar.getEvents();
       this.sidebar.getSidebarInfo();
-    } catch(e) {
+    } catch (e) {
       this.$buefy.toast.open({
         duration: 5000,
-        message: this.$t('errors.saving-error').toString(),
-        position: 'is-top',
-        type: 'is-danger'
+        message: this.$t("errors.saving-error").toString(),
+        position: "is-top",
+        type: "is-danger"
       });
     }
 
@@ -186,11 +185,11 @@ export default class Day extends Vue {
 
   public async deleteNote() {
     this.$buefy.dialog.confirm({
-      title: 'Deleting Daily Note',
-      message: this.$t('sure-confirms.delete-daily-note').toString(),
-      confirmText: 'Delete',
-      focusOn: 'cancel',
-      type: 'is-danger',
+      title: "Deleting Daily Note",
+      message: this.$t("sure-confirms.delete-daily-note").toString(),
+      confirmText: "Delete",
+      focusOn: "cancel",
+      type: "is-danger",
       hasIcon: true,
       onConfirm: async () => {
         if (!this.day.uuid) {
@@ -200,21 +199,21 @@ export default class Day extends Vue {
           await NoteService.deleteNote(this.day.uuid);
           this.sidebar.getEvents();
           this.sidebar.getSidebarInfo();
-          this.$router.push({name: 'Home Redirect'});
-        } catch(e) {
+          this.$router.push({ name: "Home Redirect" });
+        } catch (e) {
           this.$buefy.toast.open({
             duration: 5000,
-            message: this.$t('errors.deleting-error').toString(),
-            position: 'is-top',
-            type: 'is-danger'
+            message: this.$t("errors.deleting-error").toString(),
+            position: "is-top",
+            type: "is-danger"
           });
         }
         this.$buefy.toast.open({
           duration: 2000,
-          message: this.$t('success.daily-note-deleted').toString()
+          message: this.$t("success.daily-note-deleted").toString()
         });
       }
-    })
+    });
   }
 
   public setDefaultText() {
@@ -253,8 +252,8 @@ export default class Day extends Vue {
 
   unsavedAlert(e: Event) {
     if (this.unsavedChanges) {
-    // Attempt to modify event will trigger Chrome/Firefox alert msg
-    e.returnValue = true;
+      // Attempt to modify event will trigger Chrome/Firefox alert msg
+      e.returnValue = true;
     }
   }
 

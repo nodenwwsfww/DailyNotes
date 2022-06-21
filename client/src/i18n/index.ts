@@ -19,5 +19,6 @@ export const formatDate = (date: string | Date | undefined, locale: string) => {
     day: "numeric"
   });
   if (!date) return '';
+  console.log(date)
   return formatter.format(new Date(date.toString()));
 };
