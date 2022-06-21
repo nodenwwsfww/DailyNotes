@@ -64,7 +64,7 @@ export default class Day extends Vue {
 
   public metaInfo(): any {
     return {
-      title: this.title
+      title: formatDate(this.title, this.$i18n.locale)
     };
   }
 
@@ -89,7 +89,7 @@ export default class Day extends Vue {
     this.getDayData();
 
     this.headerOptions.title = formatDate(date, this.$i18n.locale);
-    this.title = this.headerOptions.title;
+    this.title = formatDate(date, 'en-US');
 
     this.$root.$on("taskUpdated", (data: any) => {
       const { note_id, task, completed } = data;
