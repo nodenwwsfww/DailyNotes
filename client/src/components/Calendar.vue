@@ -1,15 +1,17 @@
 <template>
-  <b-datepicker
-    class="calendar-date-picker"
-    inline
-    :locale="$i18n.locale"
-    :month-names="$t('months')"
-    v-model="sidebar.date"
-    indicators="bars"
-    :events="sidebar.events"
-    @input="changeDate"
-  >
-  </b-datepicker>
+  <div class="date-picker-container">
+    <b-datepicker
+        class="calendar-date-picker"
+        inline
+        :locale="$i18n.locale"
+        :month-names="$t('months')"
+        v-model="sidebar.date"
+        indicators="bars"
+        :events="sidebar.events"
+        @input="changeDate"
+    >
+    </b-datepicker>
+  </div>
 </template>
 
 <script lang="ts">
@@ -54,8 +56,8 @@ export default class Calendar extends Vue {
 
 <style scoped lang="css">
 @media (max-width: 390px) {
-  .calendar-date-picker {
-    width: 120%;
+  .date-picker-container {
+
   }
 }
 </style>
