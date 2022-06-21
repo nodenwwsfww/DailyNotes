@@ -36,7 +36,7 @@ export default Vue.extend({
     if (localStorage.getItem("lang")) {
       const lang: Locales = localStorage.lang;
       console.log(lang)
-      this.$store.commit("SET_LANGUAGE", lang);
+      this.updateLanguage(lang);
     }
   },
 });
