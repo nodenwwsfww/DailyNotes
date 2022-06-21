@@ -30,6 +30,7 @@ export default Vue.extend({
     updateLanguage(lang: string) {
       this.$store.commit("SET_LANGUAGE", lang);
       this.$i18n.locale = lang;
+      localStorage.setItem("lang", lang);
     }
   },
   mounted() {
