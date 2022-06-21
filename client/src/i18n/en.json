@@ -102,5 +102,9 @@
     "vue-devtools": "vue-devtools",
     "vue-loader": "vue-loader",
     "awesome-vue": "awesome-vue"
-  }
+  },
+  "months":[
+    "January","February","March","April","May","June","July",
+    "August","September","October","November","December"
+  ]
 }

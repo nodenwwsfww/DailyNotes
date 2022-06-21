@@ -73,5 +73,9 @@
     "delete-confirmation": "Bu notu <b> silmek istediğinizden emin misiniz? Bu eylem geri alınamaz!",
     "discard-unsaved": "Kaydedilmemiş içeriği atmak istediğinizden emin misiniz?",
     "delete-daily-note": "Bu günlük notu <b> silmek istediğinizden emin misiniz? Bu eylem geri alınamaz!"
-  }
+  },
+  "months":[
+    "Ocak","Şubat","Mart","Тisan","Mayıs","Рaziran","Temmuz",
+    "Ağustos","Eylül","Ekim","Kasım","Aralık"
+  ]
 }

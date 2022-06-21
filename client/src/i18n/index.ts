@@ -12,14 +12,12 @@ export const messages = {
 
 export const defaultLocale = Locales.EN;
 
-export const formatDate = (date: Date | undefined, locale: string) => {
+export const formatDate = (date: string | Date | undefined, locale: string) => {
   const formatter = new Intl.DateTimeFormat(locale, {
     year: "numeric",
     month: "long",
     day: "numeric"
   });
-  if (!date) return;
-
-  console.log(date, typeof date)
+  if (!date) return '';
   return formatter.format(new Date(date.toString()));
 };
