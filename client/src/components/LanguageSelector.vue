@@ -32,7 +32,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    if (localStorage.lang) {
+    if (localStorage.getItem("lang")) {
       const lang: Locales = localStorage.lang;
       this.$store.commit("SET_LANGUAGE", lang);
     }
