@@ -89,7 +89,8 @@ export default class Day extends Vue {
     this.getDayData();
 
     this.headerOptions.title = formatDate(date, 'en-US');
-    //this.title = formatDate(date, this.$i18n.locale);
+    console.log(date, 'поменялась ли дата? впроцесе')
+    this.title = formatDate(date, this.$i18n.locale);
 
     this.$root.$on("taskUpdated", (data: any) => {
       const { note_id, task, completed } = data;
