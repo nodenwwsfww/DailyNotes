@@ -2,6 +2,7 @@
   <b-datepicker
     class="calendar-date-picker"
     inline
+    :locale="$i18n.locale"
     :month-names="$t('months')"
     v-model="sidebar.date"
     indicators="bars"
