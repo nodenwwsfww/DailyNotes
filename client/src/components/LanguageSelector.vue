@@ -27,15 +27,16 @@ export default Vue.extend({
   name: "LanguageSelector",
   data: () => ({ LOCALES, defaultLocale }),
   methods: {
-    updateLanguage(lang: Locales) {
+    updateLanguage(lang: string) {
       this.$store.commit("SET_LANGUAGE", lang);
+      this.$i18n.locale = lang;
     }
   },
   mounted() {
     console.log('mounted')
-    if (localStorage.getItem("lang")) {
-      const lang: Locales = localStorage.lang;
-      console.log(lang)
+    const lang : string | null = localStorage.getItem("lang");
+    if (lang) {
+      console.log('mounted lang', lang)
       this.updateLanguage(lang);
     }
   },
