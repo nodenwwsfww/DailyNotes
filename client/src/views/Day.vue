@@ -88,8 +88,8 @@ export default class Day extends Vue {
     this.sidebar.updateDate(this.$route);
     this.getDayData();
 
-    this.headerOptions.title = formatDate(date, this.$i18n.locale);
-    this.title = formatDate(date, 'en-US');
+    this.headerOptions.title = formatDate(date, 'en-US');
+    this.title = formatDate(date, this.$i18n.locale);
 
     this.$root.$on("taskUpdated", (data: any) => {
       const { note_id, task, completed } = data;
