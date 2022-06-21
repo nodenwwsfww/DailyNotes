@@ -20,7 +20,7 @@ export const formatDate = (date: Date | string, locale: string) => {
   });
   let newDate: Date | undefined;
 
-  console.log(date)
+  if (date) console.log(date, typeof date)
   if (date instanceof String) newDate = new Date(date);
   console.log(newDate)
   return formatter.format(newDate);
