@@ -1,7 +1,6 @@
 <template>
   <div>
-<!--    <router-view></router-view>-->
-    <Home/>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -10,7 +9,6 @@ import { SharedBuefy } from "./services/sharedBuefy";
 import NoteCard from "@/components/NoteCard";
 import ErrorPage from "@/views/ErrorPage";
 import Calendar from "@/components/Calendar";
-import Home from "@/views/Home";
 
 export default {
   name: "App",
@@ -18,7 +16,6 @@ export default {
     titleTemplate: "%s | DailyNotes"
   },
   components: {
-    Home,
   },
   mounted: function() {
     SharedBuefy.notifications = this.$buefy.toast;
