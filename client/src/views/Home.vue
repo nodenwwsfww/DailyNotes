@@ -140,14 +140,14 @@ export default class Admin extends Vue {
     if (!sidebar || !content) return;
 
     if (show) {
+      content.style.display='block'
       sidebar.classList.remove("animated-hide-element");
       sidebar.classList.add("animated-show-element");
       sidebar.style.width="100%";
-      content.style.display='block'
     } else {
+      content.style.display='none'
       sidebar.classList.remove("animated-show-element");
       sidebar.classList.add("animated-hide-element");
-      content.style.display='none'
       console.log("hide");
     }
   }
