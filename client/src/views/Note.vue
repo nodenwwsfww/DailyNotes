@@ -59,7 +59,7 @@ export default class Note extends Vue {
 
   public metaInfo(): any {
     return {
-      title: this.title
+      title: this.title + 'Note'
     };
   }
 
