@@ -53,6 +53,7 @@ export default class Day extends Vue {
   public title: string = "";
   public day!: INote;
   public isLoading: boolean = false;
+  public currentDate: Date = new Date();
   public headerOptions: IHeaderOptions = {
     showDateNavs: true,
     showDelete: false,
@@ -74,6 +75,7 @@ export default class Day extends Vue {
 
   mounted() {
     const date = parse(this.$route.params.id, "MM-dd-yyyy", new Date());
+    this.currentDate = date;
     if (!isValid(date)) {
       this.$router.push({ name: "Home Redirect" });
       this.$buefy.toast.open({
@@ -234,14 +236,13 @@ export default class Day extends Vue {
 
     if (this.modifiedText !== this.text) {
       this.unsavedChanges = true;
-      this.title = `* ${this.headerOptions.title}`;
+      this.title = `* ${this.title}`;
       this.headerOptions.saveDisabled = false;
 
       if (this.sidebar.autoSave) {
         this.autoSaveThrottle();
       }
     } else {
-      this.title = this.headerOptions.title;
       this.headerOptions.saveDisabled = true;
     }
   }
