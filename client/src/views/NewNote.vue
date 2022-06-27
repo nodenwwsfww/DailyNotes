@@ -39,10 +39,10 @@ export default class NewNote extends Vue {
   public text: string = '';
   public modifiedText: string = '';
   public unsavedChanges : boolean = false;
-  public title: string = 'New Note';
+  public title: string = this.$t('titles.new-note').toString();
   public note!: INote;
   public headerOptions: IHeaderOptions = {
-    title: 'New Note',
+    title: this.$t('titles.new-note').toString(),
     saveDisabled: true,
     saveFn: () => this.saveNote(),
   };
@@ -118,11 +118,11 @@ export default class NewNote extends Vue {
     this.modifiedText = data;
 
     if (this.modifiedText !== this.text) {
-      this.title = '* New Note';
+      this.title = `'* ${this.$t('titles.new-note').toString()}`;
       this.headerOptions.saveDisabled = false;
       this.unsavedChanges = true;
     } else {
-      this.title = 'New Note';
+      this.title = this.$t('titles.new-note').toString();
       this.headerOptions.saveDisabled = true;
     }
   }

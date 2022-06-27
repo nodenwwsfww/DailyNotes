@@ -2,7 +2,8 @@
   "titles": {
     "deleting-note": "Удаление заметки",
     "unsaved-content": "Несохраненный контент",
-    "create-note": "Создать новую заметку"
+    "create-note": "Создать новую заметку",
+    "new-note": "Новая заметка"
   },
   "tooltip": {
     "today": "Вид на сегодня"

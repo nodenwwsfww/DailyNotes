@@ -2,7 +2,8 @@
   "titles": {
     "deleting-note": "Silinme notu",
     "unsaved-content": "Kaydetilmemiş İçerik",
-    "create-note": "Yeni notoluştur"
+    "create-note": "Yeni notoluştur",
+    "new-note": "Yeni Not"
   },
   "tooltip": {
     "today": "Bugüne git"

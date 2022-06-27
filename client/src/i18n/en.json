@@ -2,7 +2,8 @@
   "titles": {
     "deleting-note": "Deleting Note",
     "unsaved-content": "Unsaved Content",
-    "create-note": "Create new note"
+    "create-note": "Create new note",
+    "new-note": "New Note"
   },
   "tooltip": {
     "today": "Go to Today"

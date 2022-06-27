@@ -64,7 +64,7 @@ export default class Day extends Vue {
 
   public metaInfo(): any {
     return {
-      title: this.title + 'Day'
+      title: formatDate(this.title, 'ru-RU')
     };
   }
 
