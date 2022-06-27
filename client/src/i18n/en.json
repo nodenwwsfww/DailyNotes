@@ -3,7 +3,8 @@
     "deleting-note": "Deleting Note",
     "unsaved-content": "Unsaved Content",
     "create-note": "Create new note",
-    "new-note": "New Note"
+    "new-note": "New Note",
+    "home": "Home"
   },
   "tooltip": {
     "today": "Go to Today"

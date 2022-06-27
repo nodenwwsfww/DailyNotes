@@ -3,7 +3,8 @@
     "deleting-note": "Silinme notu",
     "unsaved-content": "Kaydetilmemiş İçerik",
     "create-note": "Yeni notoluştur",
-    "new-note": "Yeni Not"
+    "new-note": "Yeni Not",
+    "home": "Ev"
   },
   "tooltip": {
     "today": "Bugüne git"
