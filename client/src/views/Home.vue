@@ -97,15 +97,14 @@ const HOUR = MINUTES * SECONDS * 1000; // MS in an hour
     Tags,
     LanguageSelector
   },
+  metaInfo: {
+    title: "Home"
+  },
   data: () => ({ sidebarShow: false })
 })
 export default class Admin extends Vue {
   public auth_timer: any = null;
   public sidebar = SidebarInst;
-
-  public metaInfo = {
-    title: this.$t('titles.home').toString(),
-  }
 
   mounted() {
     // Get new JWT every hour
