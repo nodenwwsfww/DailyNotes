@@ -139,7 +139,7 @@ import { formatDate } from "../i18n";
     const dropdownBackground = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.background')
     if (!dropdownBackground) return;
 
-    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdownMenu = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.dropdown-menu');
 
     if (!dropdownMenu) return;
 
