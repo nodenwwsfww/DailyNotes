@@ -135,21 +135,17 @@ import { formatDate } from "../i18n";
     SimpleTask
   },
   mounted() {
-    // some adaptivity (issue on mobile devices)
     const dropdownBackground = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.background')
     if (!dropdownBackground) return;
 
-    const dropdownMenu = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.dropdown-menu');
 
-    if (!dropdownMenu) return;
+    // const dropdownMenu = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.dropdown-menu');
+    // if (!dropdownMenu) return;
 
-    const c = document.querySelector('.dropdown-trigger')
+    const dropdownTrigger = document.querySelector('.dropdown-trigger')
     dropdownBackground.addEventListener('click', () => {
-      // dropdownMenu.style.display = 'none';
-      // dropdownBackground.style.display = 'none';
       let clickEvent = new Event('click');
-      if (c) c.dispatchEvent(clickEvent)
-
+      if (dropdownTrigger) dropdownTrigger.dispatchEvent(clickEvent)
     });
 
   },
