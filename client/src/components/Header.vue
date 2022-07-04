@@ -85,8 +85,8 @@
             <b-icon icon="trash-alt"></b-icon>
           </b-tooltip>
         </div>
-        <div class="level-item alt-button">
-          <b-dropdown position="is-bottom-left" :close-on-click="false">
+        <div class="level-item alt-button" id="may-be-background">
+          <b-dropdown position="is-bottom-left" :close-on-click="false" id="dropdown-right-actions">
             <b-icon slot="trigger" icon="ellipsis-v"></b-icon>
             <b-dropdown-item>
               <b-switch
@@ -133,6 +133,12 @@ import { formatDate } from "../i18n";
 @Component({
   components: {
     SimpleTask
+  },
+  mounted() {
+    // some adaptivity (issue on mobile devices)
+    const dropdownOnRightCornerBtn = document.getElementById('dropdown-right-actions');
+    if (!dropdownOnRightCornerBtn) return;
+
   },
   props: {
     options: {
