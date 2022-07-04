@@ -57,21 +57,23 @@ import Component from "vue-class-component";
 export default class UnsavedForm extends Vue {
   public isActive: boolean = false;
 
+  correctBtnsText() {
+    // Костыли мужицкие (дубль 2) mobile adaptavity
+    if (window.innerWidth <= 300) {
+      console.log('mounted')
+      const btns: HTMLElement[] = Array.from(document.querySelectorAll('#unsaved-buttons>.button'));
+      btns.forEach(btn => {
+        btn.style.fontSize = "small";
+      })
+    }
+  }
   mounted() {
     this.isActive = true;
     if (typeof window !== "undefined") {
       document.addEventListener("keyup", this.keyPress);
     }
 
-    // Костыли мужицкие (дубль 2) mobile adaptavity
-    if (window.innerWidth <= 300) {
-      const btns: HTMLElement[] = Array.from(document.querySelectorAll('#unsaved-buttons>.button'));
-      if (btns && btns.length) {
-        btns.forEach(btn => {
-          btn.style.fontSize = "small";
-        })
-      }
-    }
+    this.correctBtnsText();
   }
 
   beforeDestroy() {
