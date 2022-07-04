@@ -60,7 +60,6 @@ export default class UnsavedForm extends Vue {
   correctBtnsText() {
     // Костыли мужицкие (дубль 2) mobile adaptavity
     if (window.innerWidth <= 300) {
-      console.log('mounted')
       const btns: HTMLElement[] = Array.from(document.querySelectorAll('#unsaved-buttons>.button'));
       btns.forEach(btn => {
         btn.style.fontSize = "small";
@@ -68,6 +67,7 @@ export default class UnsavedForm extends Vue {
     }
   }
   mounted() {
+    console.log('mounted')
     this.isActive = true;
     if (typeof window !== "undefined") {
       document.addEventListener("keyup", this.keyPress);
