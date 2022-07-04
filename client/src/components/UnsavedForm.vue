@@ -63,6 +63,7 @@ export default class UnsavedForm extends Vue {
     if (window.innerWidth <= 300) {
       const btns: HTMLElement[] = Array.from(document.querySelectorAll('#unsaved-buttons>.button'));
       console.dir(btns)
+
       btns.forEach(btn => {
         btn.style.fontSize = "small";
       })
@@ -75,7 +76,9 @@ export default class UnsavedForm extends Vue {
       document.addEventListener("keyup", this.keyPress);
     }
 
-    this.correctBtnsText();
+    setTimeout(() => {
+      this.correctBtnsText();
+    }, 200)
   }
 
   beforeDestroy() {
