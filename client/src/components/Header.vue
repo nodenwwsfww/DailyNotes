@@ -134,21 +134,6 @@ import { formatDate } from "../i18n";
   components: {
     SimpleTask
   },
-  mounted() {
-    // some adaptivity (issue on mobile devices)
-    const dropdownBackground = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.background')
-    if (!dropdownBackground) return;
-
-    const dropdownMenu = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.dropdown-menu');
-
-    if (!dropdownMenu) return;
-
-    dropdownBackground.addEventListener('click', () => {
-      dropdownMenu.style.display = 'none';
-      dropdownBackground.style.display = 'none';
-    });
-
-  },
   props: {
     options: {
       type: Object,
