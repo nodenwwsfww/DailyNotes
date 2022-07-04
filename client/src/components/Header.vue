@@ -144,8 +144,8 @@ import { formatDate } from "../i18n";
     if (!dropdownMenu) return;
 
     dropdownBackground.addEventListener('click', () => {
-      dropdownBackground.style.display = 'none';
-      dropdownMenu.style.display = 'none';
+      //dropdownBackground.style.display = 'none';
+      //dropdownMenu.style.display = 'none';
     });
 
   },
