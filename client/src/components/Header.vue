@@ -86,7 +86,7 @@
           </b-tooltip>
         </div>
         <div class="level-item alt-button">
-          <b-dropdown position="is-bottom-left" :close-on-click="false" id="dropdown-right-corner-div">
+          <b-dropdown position="is-bottom-left" :close-on-click="true" id="dropdown-right-corner-div">
             <b-icon slot="trigger" icon="ellipsis-v"></b-icon>
             <b-dropdown-item>
               <b-switch
