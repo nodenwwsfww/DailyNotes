@@ -145,7 +145,7 @@ import { formatDate } from "../i18n";
     const dropdownTrigger = document.querySelector('.dropdown-trigger')
     dropdownBackground.addEventListener('click', () => {
       let clickEvent = new Event('click');
-      if (dropdownTrigger) dropdownTrigger.dispatchEvent(clickEvent)
+      if (dropdownTrigger) dropdownTrigger.dispatchEvent(clickEvent);
     });
 
   },

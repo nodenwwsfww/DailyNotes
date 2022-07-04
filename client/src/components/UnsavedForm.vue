@@ -4,7 +4,7 @@
       <div class="modal-background" @click="cancel('outside')" />
       <div class="modal-card animation-content">
         <header class="modal-card-head">
-          <p class="modal-card-title">{{$t("titles.unsaved-content")}}</p>
+          <p class="modal-card-title" style="line-height: 1">{{$t("titles.unsaved-content")}}</p>
         </header>
 
         <section class="modal-card-body is-flex">
