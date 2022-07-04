@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
+echo getting changes
+git pull
 echo building
 cd ./client
 npm run build
@@ -21,4 +23,4 @@ flask db upgrade
 
 ./verify_data_migrations.py
 s
-exec gunicorn server:app -b 0.0.0.0:5080
+exec gunicorn server:app -b 0.0.0.0:5050
