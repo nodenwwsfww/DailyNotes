@@ -29,7 +29,7 @@
           </div>
         </section>
 
-        <footer class="modal-card-foot">
+        <footer class="modal-card-foot" id="unsaved-buttons">
           <b-button ref="cancelButton" @click="cancel('button')"
             >{{$t("buttons.Cancel")}}</b-button
           >
@@ -61,6 +61,16 @@ export default class UnsavedForm extends Vue {
     this.isActive = true;
     if (typeof window !== "undefined") {
       document.addEventListener("keyup", this.keyPress);
+    }
+
+    // Костыли мужицкие (дубль 2) mobile adaptavity
+    if (window.innerWidth <= 300) {
+      const btns = Array.from(document.querySelectorAll('#unsaved-buttons>.button'));
+      if (btns && btns.length) {
+        btns.forEach(btn => {
+          btn.style.fontStyle = "small";
+        })
+      }
     }
   }
 

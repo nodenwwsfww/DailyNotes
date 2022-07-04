@@ -135,6 +135,7 @@ import { formatDate } from "../i18n";
     SimpleTask
   },
   mounted() {
+    // Костыль 1 (buefy красавчики)
     const dropdownBackground = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.background')
     if (!dropdownBackground) return;
 
