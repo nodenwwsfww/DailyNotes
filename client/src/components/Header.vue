@@ -143,9 +143,13 @@ import { formatDate } from "../i18n";
 
     if (!dropdownMenu) return;
 
+    const c = document.querySelector('.dropdown-trigger')
     dropdownBackground.addEventListener('click', () => {
-      dropdownMenu.style.display = 'none';
-      dropdownBackground.style.display = 'none';
+      // dropdownMenu.style.display = 'none';
+      // dropdownBackground.style.display = 'none';
+      let clickEvent = new Event('click');
+      if (c) c.dispatchEvent(clickEvent)
+
     });
 
   },
