@@ -86,7 +86,7 @@
           </b-tooltip>
         </div>
         <div class="level-item alt-button">
-          <b-dropdown position="is-bottom-left" :close-on-click="false" :can-close="outside" id="dropdown-right-corner-div">
+          <b-dropdown position="is-bottom-left" :close-on-click="false" id="dropdown-right-corner-div">
             <b-icon slot="trigger" icon="ellipsis-v"></b-icon>
             <b-dropdown-item>
               <b-switch
@@ -133,6 +133,21 @@ import { formatDate } from "../i18n";
 @Component({
   components: {
     SimpleTask
+  },
+  mounted() {
+    // some adaptivity (issue on mobile devices)
+    const dropdownBackground = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.background')
+    if (!dropdownBackground) return;
+
+    const dropdownMenu = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.dropdown-menu');
+
+    if (!dropdownMenu) return;
+
+    dropdownBackground.addEventListener('click', () => {
+      dropdownMenu.style.display = 'none';
+      dropdownBackground.style.display = 'none';
+    });
+
   },
   props: {
     options: {
