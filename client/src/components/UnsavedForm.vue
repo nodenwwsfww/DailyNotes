@@ -59,8 +59,10 @@ export default class UnsavedForm extends Vue {
 
   correctBtnsText() {
     // Костыли мужицкие (дубль 2) mobile adaptavity
+    console.log(window.innerWidth)
     if (window.innerWidth <= 300) {
       const btns: HTMLElement[] = Array.from(document.querySelectorAll('#unsaved-buttons>.button'));
+      console.dir(btns)
       btns.forEach(btn => {
         btn.style.fontSize = "small";
       })
