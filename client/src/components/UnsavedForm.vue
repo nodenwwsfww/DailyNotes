@@ -4,7 +4,7 @@
       <div class="modal-background" @click="cancel('outside')" />
       <div class="modal-card animation-content">
         <header class="modal-card-head">
-          <p class="modal-card-title" style="line-height: 1">{{$t("titles.unsaved-content")}}</p>
+          <p class="modal-card-title" id="unsaved-popup-title" style="line-height: 1">{{$t("titles.unsaved-content")}}</p>
         </header>
 
         <section class="modal-card-body is-flex">
@@ -57,17 +57,28 @@ import Component from "vue-class-component";
 export default class UnsavedForm extends Vue {
   public isActive: boolean = false;
 
-  correctBtnsText() {
+  adaptiveTextForSmallDisplays() {
     // Костыли мужицкие (дубль 2) mobile adaptavity
     console.log(window.innerWidth)
     if (window.innerWidth <= 300) {
-      const btns: HTMLElement[] = Array.from(document.querySelectorAll('#unsaved-buttons>.button'));
-      console.dir(btns)
-
-      btns.forEach(btn => {
-        btn.style.fontSize = "small";
-      })
+      this.correctBtnsText();
+      this.correctPopupTitle();
     }
+  }
+  correctBtnsText() {
+    const btns: HTMLElement[] = Array.from(document.querySelectorAll('#unsaved-buttons>.button'));
+    console.dir(btns)
+
+    btns.forEach(btn => {
+      btn.style.fontSize = "small";
+    })
+  }
+  correctPopupTitle() {
+    const popupTitle = document.getElementById('#unsaved-popup-title');
+    if (popupTitle) {
+      popupTitle.style.fontSize = "medium";
+    }
+
   }
   mounted() {
     console.log('mounted')
@@ -77,7 +88,7 @@ export default class UnsavedForm extends Vue {
     }
 
     setTimeout(() => {
-      this.correctBtnsText();
+      this.adaptiveTextForSmallDisplays();
     }, 200)
   }
 
