@@ -1,9 +1,8 @@
 <template>
   <div class="columns no-margin is-mobile full-height main-element">
     <div
-        class="album-section column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
+        class="scrollbar-container album-section column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
         id="home-sidebar-album"
-        style="overflow: scroll;"
     >
       <div class="rows">
         <div
@@ -32,8 +31,8 @@
       <Tags />
     </div>
     <div
-        class="album-section column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
-        style="width: 4%; overflow: scroll;"
+        class="scrollbar-container album-section column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
+        style="width: 4%;"
         id="home-sidebar-portrait"
     >
       <div class="rows">
@@ -195,6 +194,17 @@ export default class Admin extends Vue {
 
 .no-padding  >>> {
   padding: 0px;
+}
+
+.scrollbar-container {
+  overflow: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.scrollbar-container::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
 }
 
 .animated-show-element >>> {
