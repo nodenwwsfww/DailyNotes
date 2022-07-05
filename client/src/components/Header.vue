@@ -134,22 +134,6 @@ import { formatDate } from "../i18n";
   components: {
     SimpleTask
   },
-  mounted() {
-    // Костыль 1 (buefy красавчики)
-    const dropdownBackground = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.background')
-    if (!dropdownBackground) return;
-
-
-    // const dropdownMenu = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.dropdown-menu');
-    // if (!dropdownMenu) return;
-
-    const dropdownTrigger = document.querySelector('.dropdown-trigger')
-    dropdownBackground.addEventListener('click', () => {
-      let clickEvent = new Event('click');
-      if (dropdownTrigger) dropdownTrigger.dispatchEvent(clickEvent);
-    });
-
-  },
   props: {
     options: {
       type: Object,
@@ -173,6 +157,30 @@ export default class Header extends Vue {
 
   public prevent($event: any) {
     $event.stopPropagation();
+  }
+
+  mounted() {
+    // Костыль 1 (buefy красавчики)
+    const dropdownBackground = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.background')
+    if (!dropdownBackground) return;
+
+
+    // const dropdownMenu = document.querySelector<HTMLElement>('#dropdown-right-corner-div>.dropdown-menu');
+    // if (!dropdownMenu) return;
+
+    const dropdownTrigger = document.querySelector('.dropdown-trigger')
+    dropdownBackground.addEventListener('click', () => {
+      let clickEvent = new Event('click');
+      if (dropdownTrigger) dropdownTrigger.dispatchEvent(clickEvent);
+    });
+
+    setTimeout(() => {
+      this.adaptiveForSmallDisplays();
+    }, 100);
+
+  }
+  public adaptiveForSmallDisplays() {
+    console.log('success test');
   }
 
   public prevDay() {
