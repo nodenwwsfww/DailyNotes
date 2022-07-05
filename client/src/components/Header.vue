@@ -173,8 +173,10 @@ export default class Header extends Vue {
     console.log(window.innerWidth)
     if (window.innerWidth <= 390) {
       const headerTitle = document.getElementById('header-title-date');
-      if (headerTitle) headerTitle.style.fontSize = "small"
-      console.log(this.options.title)
+      if (!headerTitle) return;
+      headerTitle.style.fontSize = "small"
+      const date = new Date(this.options.title);
+      headerTitle.textContent = format(date, "MM-dd-yyyy")
     }
   }
 
