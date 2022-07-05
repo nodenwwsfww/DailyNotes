@@ -2,17 +2,6 @@
   <div class="header-wrapper light-white" @click="prevent($event)">
     <div class="main-header level is-mobile">
       <div class="level-left">
-        <div class="level-item alt-button" v-if="!options.hideCreate">
-          <div @click="newNote()">
-            <b-tooltip
-              :label="$t('titles.create-note').toString()"
-              position="is-right"
-              z-index="9999"
-            >
-              <b-icon icon="plus"></b-icon>
-            </b-tooltip>
-          </div>
-        </div>
         <div class="level-item alt-button" v-if="sidebar.tasks.length">
           <b-dropdown aria-role="list">
             <b-tooltip
