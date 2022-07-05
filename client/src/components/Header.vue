@@ -180,7 +180,6 @@ export default class Header extends Vue {
 
   }
   public adaptiveForSmallDisplays() {
-    console.log('success test');
   }
 
   public prevDay() {
@@ -249,6 +248,13 @@ export default class Header extends Vue {
 </script>
 
 <style scoped>
+html {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 .header-wrapper {
   width: 100%;
   padding: 10px 20px 0px 20px;
