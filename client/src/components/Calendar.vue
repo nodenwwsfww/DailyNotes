@@ -57,7 +57,6 @@ export default class Calendar extends Vue {
 <style scoped lang="css">
 @media (max-width: 390px) {
   .date-picker-container {
-    overflow:scroll
   }
 }
 </style>

@@ -3,6 +3,7 @@
     <div
         class="album-section column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
         id="home-sidebar-album"
+        style="overflow: scroll;"
     >
       <div class="rows">
         <div
@@ -32,7 +33,7 @@
     </div>
     <div
         class="album-section column sidebar is-6-mobile is-6-tablet is-two-fifths-desktop is-4-widescreen is-3-fullhd"
-        style="width: 4%"
+        style="width: 4%; overflow: scroll;"
         id="home-sidebar-portrait"
     >
       <div class="rows">
