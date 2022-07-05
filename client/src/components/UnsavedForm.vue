@@ -89,7 +89,7 @@ export default class UnsavedForm extends Vue {
 
     setTimeout(() => {
       this.adaptiveTextForSmallDisplays();
-    }, 200)
+    }, 100)
   }
 
   beforeDestroy() {
