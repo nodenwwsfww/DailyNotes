@@ -60,7 +60,7 @@ export default class UnsavedForm extends Vue {
   adaptiveTextForSmallDisplays() {
     // Костыли мужицкие (дубль 2) mobile adaptavity
     console.log(window.innerWidth)
-    if (window.innerWidth <= 300) {
+    if (window.innerWidth <= 390) {
       this.correctBtnsText();
       this.correctPopupTitle();
     }

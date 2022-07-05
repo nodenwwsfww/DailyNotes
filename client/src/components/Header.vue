@@ -36,7 +36,7 @@
         <div @click="prevDay()" class="alt-button" v-if="options.showDateNavs">
           <b-icon icon="chevron-left"></b-icon>
         </div>
-        <div class="header-title light-white">
+        <div class="header-title light-white" id="header-title-date">
           {{ formatDate(options.title, $i18n.locale) }}
         </div>
         <div @click="nextDay()" class="alt-button" v-if="options.showDateNavs">
@@ -169,6 +169,13 @@ export default class Header extends Vue {
 
   }
   public adaptiveForSmallDisplays() {
+    // Костыли мужицкие (дубль 2) mobile adaptavity
+    console.log(window.innerWidth)
+    if (window.innerWidth <= 390) {
+      const headerTitle = document.getElementById('header-title-date');
+      if (headerTitle) headerTitle.style.fontSize = "small"
+      console.log(this.options.title)
+    }
   }
 
   public prevDay() {
@@ -237,12 +244,6 @@ export default class Header extends Vue {
 </script>
 
 <style scoped>
-html {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
 
 .header-wrapper {
   width: 100%;
