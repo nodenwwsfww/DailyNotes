@@ -74,7 +74,7 @@ export default class UnsavedForm extends Vue {
     })
   }
   correctPopupTitle() {
-    const popupTitle = document.getElementById('#unsaved-popup-title');
+    const popupTitle = document.getElementById('unsaved-popup-title');
     if (popupTitle) {
       popupTitle.style.fontSize = "medium";
     }
