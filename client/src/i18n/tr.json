@@ -30,7 +30,7 @@
     "Export-Notes": "İhracat Notları",
     "Logout": "Çıkış Yap",
     "enable-auto-save": "Otomatik Kaydetmeyi Etkinleştir",
-    "disable-auto-save": "Otomatik Kaydetmeyi Devre Dışı Bırak"
+    "disable-auto-save": "Otomatik kaydetme"
   },
   "errors": {
     "notfound": "Sayfa bulunamadı. Lütfen geridönün ve tekrar deneyin.",
